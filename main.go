@@ -29,6 +29,5 @@ func main() {
 	if c.Debug {
 		log.SetLevel(log.DebugLevel)
 	}
-	log.Infof("%+v\n", c)
 	api.StartServer(&c)
 }

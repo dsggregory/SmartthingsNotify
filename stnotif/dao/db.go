@@ -12,6 +12,8 @@ import (
 
 const (
 	goMysqlTimeFormat string = "2006-01-02 15:04:05" // "12/08/2018 7:08:16"
+	// SinceDateFormat is the expected time format for GetEvents
+	SinceDateFormat string = "01/02/2006 15:04:05"
 )
 
 // NotifRec is a notifications record
@@ -44,7 +46,6 @@ func MysqlTimeToUnix(ts string) int64 {
 
 // AddEvent inserts an event into the table
 func (d *DbHandle) AddEvent(n NotifRec) error {
-	log.WithField("rec", n).Info("adding record")
 	_, err := d.addStmt.Exec(n.Device, n.EvTime, n.Event, n.Value, n.Description)
 	return err
 }

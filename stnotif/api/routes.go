@@ -1,34 +1,55 @@
 package api
 
 import (
-	"fmt"
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"time"
 
+	"code.dsg.com/smartthings_notif/stnotif/dao"
 	"github.com/gorilla/mux"
 
 	log "github.com/sirupsen/logrus"
 )
 
-func (s *server) fooHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hi there, I love %s!\n", r.URL.Path[1:])
-	log.Infof("%+v\n", r)
-}
-
 func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
-	log.Info("in addEvent")
 	body, err := ioutil.ReadAll(r.Body)
 	if err == nil {
-		log.WithField("body", string(body)).Info()
-	} else {
-		log.WithError(err).Error("cannot read body")
+		n := dao.NotifRec{}
+		err = json.Unmarshal(body, &n)
+		if err == nil {
+			err = s.db.AddEvent(n)
+			if err == nil {
+				w.WriteHeader(201)
+			}
+		}
+	}
+	if err != nil {
+		log.WithError(err).Error("cannot add event")
 		w.WriteHeader(500)
 	}
 }
 
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	log.WithField("since", vars["since"]).Infof("in getEvents")
+	t, err := time.Parse(dao.SinceDateFormat, vars["since"])
+	if err == nil {
+		var events []dao.NotifRec
+		events, err = s.db.GetEvents(t)
+		if err == nil {
+			var j []byte
+			j, err = json.Marshal(events)
+			if err == nil {
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(200)
+				w.Write(j)
+			}
+		}
+	}
+	if err != nil {
+		log.WithError(err).WithField("since", vars["since"]).Error("cannot get events")
+		w.WriteHeader(500)
+	}
 }
 
 // create the routes we will support
@@ -36,17 +57,11 @@ func (s *server) initRoutes() {
 	/* With named routes, other code may lookup the Path
 	   url, err := r.Get(route_name).URL(param_name, param_value, ...)
 	*/
-	s.router.HandleFunc("/foo", s.fooHandler).
-		Methods("GET").
-		Name("foo")
-
 	s.router.HandleFunc("/event", s.addEvent).
 		Methods("POST").
 		Name("addEvent")
 	s.router.HandleFunc("/events", s.getEvents).
 		Methods("GET").
-		Queries("since", "{since}").
+		Queries("since", "{since}"). // time.UnixFormat()
 		Name("getEvents")
-
-	s.dumpRoutes()
 }

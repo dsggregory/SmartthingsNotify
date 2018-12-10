@@ -77,6 +77,9 @@ func StartServer(config *conf.Conf) {
 
 	s := server{config: config, router: mux.NewRouter(), db: db}
 	s.initRoutes()
+	if log.GetLevel() == log.DebugLevel {
+		s.dumpRoutes()
+	}
 
 	laddr := fmt.Sprintf(":%d", 8080)
 
