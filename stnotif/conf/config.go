@@ -17,9 +17,10 @@ type DbConn struct {
 
 // Conf an instantiated configuration
 type Conf struct {
-	Debug    bool     `yaml:"debug"`
-	Hosts    []string `yaml:"hosts"`
-	DbServer DbConn   `yaml:"dbServer"`
+	ServerPort int      `yaml:"serverPort"`
+	Debug      bool     `yaml:"debug"`
+	Hosts      []string `yaml:"hosts"`
+	DbServer   DbConn   `yaml:"dbServer"`
 }
 
 // AllowsHost checks host against to determine if a peer matches a configured host.

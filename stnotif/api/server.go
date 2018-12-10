@@ -81,7 +81,11 @@ func StartServer(config *conf.Conf) {
 		s.dumpRoutes()
 	}
 
-	laddr := fmt.Sprintf(":%d", 8080)
+	svcPort := 8080
+	if config.ServerPort > 0 {
+		svcPort = config.ServerPort
+	}
+	laddr := fmt.Sprintf(":%d", svcPort)
 
 	srv := &http.Server{
 		Addr: laddr,
