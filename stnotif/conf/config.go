@@ -33,9 +33,8 @@ func (c *Conf) AllowsHost(host string) bool {
 }
 
 // GetConf loads and returns the config from file ./config.yaml
-func (c *Conf) GetConf() *Conf {
-
-	yamlFile, err := ioutil.ReadFile("config.yaml")
+func (c *Conf) GetConf(cfgPath string) *Conf {
+	yamlFile, err := ioutil.ReadFile(cfgPath)
 	if err != nil {
 		log.Printf("yamlFile.Get err   #%v ", err)
 	}

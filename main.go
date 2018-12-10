@@ -25,7 +25,7 @@ func init() {
 
 func main() {
 	var c conf.Conf
-	c.GetConf()
+	c.GetConf("./config.yaml")
 	if c.Debug {
 		log.SetLevel(log.DebugLevel)
 	}

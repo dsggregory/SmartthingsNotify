@@ -11,17 +11,17 @@ import (
 )
 
 const (
-	goMysqlTimeFormat string = "2006-01-02 15:04:05"
+	goMysqlTimeFormat string = "2006-01-02 15:04:05" // "12/08/2018 7:08:16"
 )
 
 // NotifRec is a notifications record
 type NotifRec struct {
-	id          int
-	device_name string
-	time        int64
-	event       string
-	value       string
-	description string
+	ID          int
+	Device      string
+	EvTime      int64
+	Event       string
+	Value       string
+	Description string
 }
 
 // DbHandle is a handle to the database
@@ -33,18 +33,19 @@ type DbHandle struct {
 
 // UnixToMysqlTime converts time_t to YYYY-MM-DD hh:mm:ss
 func UnixToMysqlTime(ti int64) string {
-	return time.Unix(ti, 0).Format(goMysqlTimeFormat)
+	return time.Unix(ti, 0).UTC().Format(goMysqlTimeFormat)
 }
 
 // MysqlTimeToUnix converts YYYY-MM-DD hh:mm:ss to time_t
 func MysqlTimeToUnix(ts string) int64 {
 	t, _ := time.Parse(goMysqlTimeFormat, ts)
-	return (t.Unix())
+	return t.Unix()
 }
 
 // AddEvent inserts an event into the table
 func (d *DbHandle) AddEvent(n NotifRec) error {
-	_, err := d.addStmt.Exec(n.device_name, n.time, n.event, n.value, n.description)
+	log.WithField("rec", n).Info("adding record")
+	_, err := d.addStmt.Exec(n.Device, n.EvTime, n.Event, n.Value, n.Description)
 	return err
 }
 
@@ -57,12 +58,12 @@ func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
 		for rows.Next() {
 			var n NotifRec
 			err = rows.Scan(
-				&n.id,
-				&n.device_name,
-				&n.time,
-				&n.event,
-				&n.value,
-				&n.description)
+				&n.ID,
+				&n.Device,
+				&n.EvTime,
+				&n.Event,
+				&n.Value,
+				&n.Description)
 			if err == nil {
 				recs = append(recs, n)
 			}
