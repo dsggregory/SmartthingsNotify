@@ -13,7 +13,7 @@ import (
 const (
 	goMysqlTimeFormat string = "2006-01-02 15:04:05" // "12/08/2018 7:08:16"
 	// SinceDateFormat is the expected time format for GetEvents
-	SinceDateFormat string = "01/02/2006 15:04:05"
+	SinceDateFormat string = "1/2/2006 15:04:05"
 )
 
 // NotifRec is a notifications record
@@ -44,6 +44,11 @@ func MysqlTimeToUnix(ts string) int64 {
 	return t.Unix()
 }
 
+// SinceFormatToTime converts the "since" format to Time
+func SinceFormatToTime(since string) (time.Time, error) {
+	return time.Parse(SinceDateFormat, since)
+}
+
 // AddEvent inserts an event into the table
 func (d *DbHandle) AddEvent(n NotifRec) error {
 	_, err := d.addStmt.Exec(n.Device, n.EvTime, n.Event, n.Value, n.Description)
@@ -53,7 +58,9 @@ func (d *DbHandle) AddEvent(n NotifRec) error {
 // GetEvents returns an array of events since some time
 func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
 	var recs []NotifRec
-	rows, err := d.getStmt.Query(UnixToMysqlTime(since.Unix()))
+	tsince := since.Unix()
+	log.WithField("since_t", tsince).WithField("since_tm", since).Debug()
+	rows, err := d.getStmt.Query(tsince)
 	defer rows.Close()
 	if err == nil {
 		for rows.Next() {
@@ -79,17 +86,7 @@ func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
 
 // NewDbHandler creates an instance of the dao
 func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
-	dsn := conf.DbServer.User
-	if len(conf.DbServer.Password) > 0 {
-		dsn += ":" + conf.DbServer.Password
-	}
-	if len(conf.DbServer.Host) > 0 {
-		//tcp(127.0.0.1:3306)
-		dsn += "@tcp(" + conf.DbServer.Host + ":" + conf.DbServer.Port + ")"
-	}
-	dsn += "/" + conf.DbServer.Database + "?charset=utf8"
-	log.WithField("dsn", dsn).Debug("opening database")
-	conn, err := sql.Open("mysql", dsn)
+	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
 	if err != nil {
 		return nil, err
 	}

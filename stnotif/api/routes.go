@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"time"
 
 	"code.dsg.com/smartthings_notif/stnotif/dao"
 	"github.com/gorilla/mux"
@@ -32,13 +31,17 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	t, err := time.Parse(dao.SinceDateFormat, vars["since"])
+	t, err := dao.SinceFormatToTime(vars["since"])
 	if err == nil {
 		var events []dao.NotifRec
 		events, err = s.db.GetEvents(t)
 		if err == nil {
 			var j []byte
-			j, err = json.Marshal(events)
+			if len(events) > 0 {
+				j, err = json.Marshal(events)
+			} else {
+				j = []byte("{}")
+			}
 			if err == nil {
 				w.Header().Set("Content-Type", "application/json")
 				w.WriteHeader(200)

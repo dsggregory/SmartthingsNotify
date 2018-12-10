@@ -7,20 +7,16 @@ import (
 	"gopkg.in/yaml.v2"
 )
 
-type DbConn struct {
-	Host     string `yaml:"host"`
-	Port     string `yaml:"port"`
-	User     string `yaml:"user"`
-	Password string `yaml:"password"`
-	Database string `yaml:"database"`
-}
-
 // Conf an instantiated configuration
 type Conf struct {
 	ServerPort int      `yaml:"serverPort"`
 	Debug      bool     `yaml:"debug"`
 	Hosts      []string `yaml:"hosts"`
-	DbServer   DbConn   `yaml:"dbServer"`
+	// DbDriver is the go-sql database plugin
+	DbDriver string `yaml:"dbDriver"`
+	// DbDSN is the go-sql connection string for the selected database engine.
+	// Ex. (for mysql) "user:passwd@tcp(host:port)/database?options"
+	DbDSN string `yaml:"dbDSN"`
 }
 
 // AllowsHost checks host against to determine if a peer matches a configured host.

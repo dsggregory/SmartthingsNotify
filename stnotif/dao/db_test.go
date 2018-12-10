@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestTimeConvert(t *testing.T) {
+func TestMySqlTimeConvert(t *testing.T) {
 	type testTime struct {
 		ts string
 		ti int64
@@ -24,5 +24,25 @@ func TestTimeConvert(t *testing.T) {
 
 		ti := MysqlTimeToUnix(tests[i].ts)
 		assert.Equal(int64(tests[i].ti), ti)
+	}
+}
+
+func TestSinceTimeConvert(t *testing.T) {
+	type testTime struct {
+		ts string
+		ti int64
+	}
+	tests := []testTime{
+		testTime{"01/01/1970 00:00:00", int64(0)},
+		testTime{"1/1/1970 0:00:00", int64(0)},
+		testTime{"12/09/2018 21:54:20", int64(1544392460)},
+	}
+
+	assert := assert.New(t)
+
+	for i := range tests {
+		t, err := SinceFormatToTime(tests[i].ts)
+		assert.Nil(err)
+		assert.Equal(tests[i].ti, t.Unix())
 	}
 }
