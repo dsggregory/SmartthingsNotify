@@ -55,33 +55,49 @@ func (d *DbHandle) AddEvent(n NotifRec) error {
 	return err
 }
 
+// parses q Query result set into array of notification records
+func (d *DbHandle) notificationsFromQuery(rows *sql.Rows) ([]NotifRec, error) {
+	var recs []NotifRec
+	err := rows.Err()
+	if err != nil {
+		return nil, err
+	}
+	for rows.Next() {
+		var n NotifRec
+		err = rows.Scan(
+			&n.ID,
+			&n.Device,
+			&n.EvTime,
+			&n.Event,
+			&n.Value,
+			&n.Description)
+		if err == nil {
+			recs = append(recs, n)
+		}
+	}
+	return recs, nil
+}
+
 // GetEvents returns an array of events since some time
 func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
-	var recs []NotifRec
 	tsince := since.Unix()
 	log.WithField("since_t", tsince).WithField("since_tm", since).Debug()
 	rows, err := d.getStmt.Query(tsince)
 	defer rows.Close()
 	if err == nil {
-		for rows.Next() {
-			var n NotifRec
-			err = rows.Scan(
-				&n.ID,
-				&n.Device,
-				&n.EvTime,
-				&n.Event,
-				&n.Value,
-				&n.Description)
-			if err == nil {
-				recs = append(recs, n)
-			}
-		}
+		return d.notificationsFromQuery(rows)
 	}
-	err = rows.Err()
-	if err != nil {
-		return nil, err
+	return nil, err
+}
+
+// GetLastByDevice returns the current state of all known devices
+func (d *DbHandle) GetLastByDevice() ([]NotifRec, error) {
+	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications group by device_name)")
+	defer rows.Close()
+	if err == nil {
+		return d.notificationsFromQuery(rows)
 	}
-	return recs, nil
+	return nil, err
 }
 
 // NewDbHandler creates an instance of the dao

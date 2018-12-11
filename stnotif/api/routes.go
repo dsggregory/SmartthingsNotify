@@ -55,6 +55,29 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
+	var events []dao.NotifRec
+	events, err := s.db.GetLastByDevice()
+	if err == nil {
+		var j []byte
+		if len(events) > 0 {
+			j, err = json.Marshal(events)
+		} else {
+			j = []byte("{}")
+		}
+		if err == nil {
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(200)
+			w.Write(j)
+			//log.Info(string(j))
+		}
+	}
+	if err != nil {
+		log.WithError(err).Error("cannot get events")
+		w.WriteHeader(500)
+	}
+}
+
 // create the routes we will support
 func (s *server) initRoutes() {
 	/* With named routes, other code may lookup the Path
@@ -65,6 +88,9 @@ func (s *server) initRoutes() {
 		Name("addEvent")
 	s.router.HandleFunc("/events", s.getEvents).
 		Methods("GET").
-		Queries("since", "{since}"). // time.UnixFormat()
+		Queries("since", "{since}").
 		Name("getEvents")
+	s.router.HandleFunc("/events/state", s.getEventsState).
+		Methods("GET").
+		Name("getEventsState")
 }

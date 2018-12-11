@@ -63,6 +63,7 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 				Error("refused")
 		} else {
 			handler.ServeHTTP(w, r)
+			log.WithField("status", w.status).Info("done")
 		}
 		// have to wrap the ResponseWriter if we want to log the status
 	})
