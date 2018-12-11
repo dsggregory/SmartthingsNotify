@@ -52,18 +52,42 @@ func (s *server) dumpRoutes() {
 	})
 }
 
+// middleware to record the response status
+type statusRecorder struct {
+	http.ResponseWriter
+	status int
+}
+
+func (rec *statusRecorder) WriteHeader(code int) {
+	rec.status = code
+	rec.ResponseWriter.WriteHeader(code)
+}
+
 // logs the request before passing on to the mux router
 func (s *server) wrapRequest(handler http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Infof("%s %s %s", r.RemoteAddr, r.Method, r.URL)
+		log.WithFields(log.Fields{
+			"RemoteAddr": r.RemoteAddr,
+			"Method":     r.Method,
+			"URL":        r.URL,
+			"state":      "begin",
+		}).Info()
 		if s.config.AllowsHost(r.Host) {
 			log.WithFields(log.Fields{
 				"RemoteAddr": r.RemoteAddr,
 			}).
 				Error("refused")
 		} else {
+			// Initialize the status to 200 in case WriteHeader is not called
+			rec := statusRecorder{w, 200}
 			handler.ServeHTTP(w, r)
-			log.WithField("status", w.status).Info("done")
+			log.WithFields(log.Fields{
+				"RemoteAddr": r.RemoteAddr,
+				"Method":     r.Method,
+				"URL":        r.URL,
+				"Status":     rec.status,
+				"state":      "complete",
+			}).Info()
 		}
 		// have to wrap the ResponseWriter if we want to log the status
 	})
