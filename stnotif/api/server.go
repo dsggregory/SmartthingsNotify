@@ -25,29 +25,30 @@ type server struct {
 }
 
 // debug
-func (s *server) dumpRoutes() {
+func (s *server) logRoutes() {
 	_ = s.router.Walk(func(route *mux.Route, router *mux.Router, ancestors []*mux.Route) error {
+		flds := log.Fields{}
 		pathTemplate, err := route.GetPathTemplate()
 		if err == nil {
-			fmt.Println("ROUTE:", pathTemplate)
+			flds["ROUTE"] = pathTemplate
 		}
 		pathRegexp, err := route.GetPathRegexp()
 		if err == nil {
-			fmt.Println("Path regexp:", pathRegexp)
+			flds["PathRegexp"] = pathRegexp
 		}
 		queriesTemplates, err := route.GetQueriesTemplates()
 		if err == nil {
-			fmt.Println("Queries templates:", strings.Join(queriesTemplates, ","))
+			flds["QueriesTemplate"] = strings.Join(queriesTemplates, ",")
 		}
 		queriesRegexps, err := route.GetQueriesRegexp()
 		if err == nil {
-			fmt.Println("Queries regexps:", strings.Join(queriesRegexps, ","))
+			flds["QueriesRegexps"] = strings.Join(queriesRegexps, ",")
 		}
 		methods, err := route.GetMethods()
 		if err == nil {
-			fmt.Println("Methods:", strings.Join(methods, ","))
+			flds["Methods"] = strings.Join(methods, ",")
 		}
-		fmt.Println()
+		log.WithFields(flds).Debug("Available Route")
 		return nil
 	})
 }
@@ -80,7 +81,7 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 		} else {
 			// Initialize the status to 200 in case WriteHeader is not called
 			rec := statusRecorder{w, 200}
-			handler.ServeHTTP(w, r)
+			handler.ServeHTTP(&rec, r)
 			log.WithFields(log.Fields{
 				"RemoteAddr": r.RemoteAddr,
 				"Method":     r.Method,
@@ -103,7 +104,7 @@ func StartServer(config *conf.Conf) {
 	s := server{config: config, router: mux.NewRouter(), db: db}
 	s.initRoutes()
 	if log.GetLevel() == log.DebugLevel {
-		s.dumpRoutes()
+		s.logRoutes()
 	}
 
 	svcPort := 8080
