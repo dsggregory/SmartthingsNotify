@@ -73,11 +73,24 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 			"URL":        r.URL,
 			"state":      "begin",
 		}).Info()
-		if s.config.AllowsHost(r.Host) {
+
+		// Is the remote allowed?
+		rhost := r.RemoteAddr
+		v6end := strings.LastIndex(rhost, "]") // v6 remote addr looks like [::1]:port
+		if v6end >= 0 {
+			rhost = rhost[:v6end+1]
+		} else {
+			i := strings.LastIndex(rhost, ":")
+			if i >= 0 {
+				rhost = rhost[:i]
+			}
+		}
+		if !s.config.AllowsHost(rhost) {
 			log.WithFields(log.Fields{
 				"RemoteAddr": r.RemoteAddr,
 			}).
-				Error("refused")
+				Error("refusing RemoteAddr")
+			w.WriteHeader(403)
 		} else {
 			// Initialize the status to 200 in case WriteHeader is not called
 			rec := statusRecorder{w, 200}
