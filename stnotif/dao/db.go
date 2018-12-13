@@ -130,12 +130,17 @@ KEY (time)
 	return nil
 }
 
+// Return the database name of the Data Source Name
 func dbnameOfDSN(dsn string) (string, string) {
 	var dbname string
 	i := strings.LastIndex(dsn, "/")
 	if i >= 0 {
 		dbname = dsn[i+1:] // save the database name
-		dsn = dsn[:i+1]    // stop on the database name in conf. Requires trailing '/'.
+		j := strings.Index(dbname, "?")
+		if j >= 0 {
+			dbname = dbname[:j]
+		}
+		dsn = dsn[:i+1] // stomp on the database name in conf. Requires trailing '/'.
 	}
 
 	return dbname, dsn
