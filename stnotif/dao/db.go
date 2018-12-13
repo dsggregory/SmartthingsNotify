@@ -2,6 +2,7 @@ package dao
 
 import (
 	"database/sql"
+	"fmt"
 	"strings"
 	"time"
 
@@ -30,6 +31,7 @@ type NotifRec struct {
 // DbHandle is a handle to the database
 type DbHandle struct {
 	conf    *conf.Conf
+	dbname  string
 	conn    *sql.DB
 	addStmt *sql.Stmt
 	getStmt *sql.Stmt
@@ -117,15 +119,9 @@ device_name varchar(64),
 time bigint unsigned,
 event varchar(64),
 value varchar(64),
-description varchar(128)
+description varchar(128),
+KEY (time)
 ) ENGINE=INNODB`
-	_, err = d.conn.Exec(q)
-	if err != nil {
-		return err
-	}
-
-	q = "ALTER TABLE " + dbname + ".notifications"
-	q += " ADD INDEX (time)"
 	_, err = d.conn.Exec(q)
 	if err != nil {
 		return err
@@ -134,15 +130,21 @@ description varchar(128)
 	return nil
 }
 
-// NewDbHandlerTest creates a test DB
-func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
-	dsn := conf.DbDSN
+func dbnameOfDSN(dsn string) (string, string) {
 	var dbname string
 	i := strings.LastIndex(dsn, "/")
 	if i >= 0 {
-		dbname = dsn[i+1:]          // save the database name
-		conf.DbDSN = conf.DbDSN[:i] // stop on the database name in conf
+		dbname = dsn[i+1:] // save the database name
+		dsn = dsn[:i+1]    // stop on the database name in conf. Requires trailing '/'.
 	}
+
+	return dbname, dsn
+}
+
+// NewDbHandlerTest creates a test DB
+func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
+	dbname, dsn := dbnameOfDSN(conf.DbDSN)
+	conf.DbDSN = dsn
 
 	// open without a default database name
 	d := DbHandle{conf: conf}
@@ -152,6 +154,9 @@ func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 	}
 	d.conn = conn
 
+	// drop the existing test database
+	_, _ = d.conn.Exec("DROP DATABASE " + dbname)
+
 	// create the test database
 	err = d.CreateDatabase(dbname)
 	if err != nil {
@@ -160,13 +165,14 @@ func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 
 	// close and reopen with the database name
 	d.conn.Close()
-	conf.DbDSN += "/" + dbname
+	conf.DbDSN += dbname
 	return NewDbHandler(conf)
 }
 
 // NewDbHandler creates an instance of the dao
 func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 	d := DbHandle{conf: conf}
+	d.dbname, _ = dbnameOfDSN(conf.DbDSN)
 
 	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
 	if err != nil {
@@ -174,12 +180,12 @@ func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 	}
 	d.conn = conn
 
-	d.getStmt, err = conn.Prepare("SELECT id, device_name, time, event, value, description FROM smartthings.notifications WHERE time>=?")
+	d.getStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=?", d.dbname))
 	if err != nil {
 		log.WithError(err).Fatal("can't prepare GET statement")
 	}
 
-	d.addStmt, err = conn.Prepare("INSERT INTO smartthings.notifications SET id=0, device_name=?, time=?, event=?, value=?, description=?")
+	d.addStmt, err = conn.Prepare(fmt.Sprintf("INSERT INTO %s.notifications SET id=0, device_name=?, time=?, event=?, value=?, description=?", d.dbname))
 	if err != nil {
 		log.WithError(err).Fatal("can't prepare ADD statement")
 	}
