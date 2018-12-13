@@ -11,6 +11,9 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+// Store an event notification record.
+// POST /events
+// Body is JSON array of dao.NotifRec
 func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)
 	if err == nil {
@@ -29,6 +32,8 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Get events since some time.
+// GET /events?since={mm/dd/yy+HH:MM:SS}
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	t, err := dao.SinceFormatToTime(vars["since"])
@@ -55,6 +60,8 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Get current state of all known devices.
+// GET /events/state
 func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
 	var events []dao.NotifRec
 	events, err := s.db.GetLastByDevice()
