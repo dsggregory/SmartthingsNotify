@@ -101,7 +101,8 @@ func StartServer(config *conf.Conf) {
 		log.WithError(err).Fatalln("unable to open database")
 	}
 
-	s := server{config: config, router: mux.NewRouter(), db: db}
+	s := &server{config: config, router: mux.NewRouter(), db: db}
+	fmt.Println(s)
 	s.initRoutes()
 	if log.GetLevel() == log.DebugLevel {
 		s.logRoutes()
@@ -128,14 +129,14 @@ func StartServer(config *conf.Conf) {
 
 	// Run our server in a goroutine so that it doesn't block.
 	go func() {
-		log.Infof("listening on %s\n", laddr)
+		log.Infof("listening on %s", laddr)
 		if err := srv.ListenAndServe(); err != nil {
 			log.WithError(err).Fatal("Unable to start server")
 		}
 	}()
 
 	c := make(chan os.Signal, 1)
-	// We'll accept graceful shutdowns when quit via SIGINT (Ctrl+C)
+	// We'll accept graceful shutdowns when quit via SIGINT (Ctrl+Config)
 	// SIGKILL, and SIGTERM (`kill(1)`).
 	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGTERM)
 
