@@ -2,6 +2,7 @@ package dao
 
 import (
 	"database/sql"
+	"strings"
 	"time"
 
 	"code.dsg.com/smartthings_notif/stnotif/conf"
@@ -28,6 +29,7 @@ type NotifRec struct {
 
 // DbHandle is a handle to the database
 type DbHandle struct {
+	conf    *conf.Conf
 	conn    *sql.DB
 	addStmt *sql.Stmt
 	getStmt *sql.Stmt
@@ -100,13 +102,77 @@ func (d *DbHandle) GetLastByDevice() ([]NotifRec, error) {
 	return nil, err
 }
 
-// NewDbHandler creates an instance of the dao
-func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
+// CreateDatabase creates the database if it doesn't exist
+func (d *DbHandle) CreateDatabase(dbname string) error {
+	q := "CREATE DATABASE IF NOT EXISTS " + dbname
+	_, err := d.conn.Exec(q)
+	if err != nil {
+		return err
+	}
+
+	q = "CREATE TABLE IF NOT EXISTS " + dbname + ".notifications"
+	q += ` (
+id int primary key auto_increment,
+device_name varchar(64),
+time bigint unsigned,
+event varchar(64),
+value varchar(64),
+description varchar(128)
+) ENGINE=INNODB`
+	_, err = d.conn.Exec(q)
+	if err != nil {
+		return err
+	}
+
+	q = "ALTER TABLE " + dbname + ".notifications"
+	q += " ADD INDEX (time)"
+	_, err = d.conn.Exec(q)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// NewDbHandlerTest creates a test DB
+func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
+	dsn := conf.DbDSN
+	var dbname string
+	i := strings.LastIndex(dsn, "/")
+	if i >= 0 {
+		dbname = dsn[i+1:]          // save the database name
+		conf.DbDSN = conf.DbDSN[:i] // stop on the database name in conf
+	}
+
+	// open without a default database name
+	d := DbHandle{conf: conf}
 	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
 	if err != nil {
 		return nil, err
 	}
-	d := DbHandle{conn: conn}
+	d.conn = conn
+
+	// create the test database
+	err = d.CreateDatabase(dbname)
+	if err != nil {
+		return nil, err
+	}
+
+	// close and reopen with the database name
+	d.conn.Close()
+	conf.DbDSN += "/" + dbname
+	return NewDbHandler(conf)
+}
+
+// NewDbHandler creates an instance of the dao
+func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
+	d := DbHandle{conf: conf}
+
+	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
+	if err != nil {
+		return nil, err
+	}
+	d.conn = conn
 
 	d.getStmt, err = conn.Prepare("SELECT id, device_name, time, event, value, description FROM smartthings.notifications WHERE time>=?")
 	if err != nil {

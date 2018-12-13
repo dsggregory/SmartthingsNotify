@@ -1,0 +1,1257 @@
+Date/Time,Device,Event Name,Event Value,Description
+12/08/2018 7:08:16,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 7:37:34,Garage Doors,contact,open,open
+12/08/2018 7:37:37,zAlarmP GaragePass,contact,open,open
+12/08/2018 7:37:41,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 7:38:09,Camera Driveway,motion,active,active
+12/08/2018 7:38:13,Garage Doors,contact,closed,closed
+12/08/2018 7:38:14,Sensor Back Drive,motion,active,active
+12/08/2018 7:38:14,Sensor Back Drive,motion,inactive,inactive
+12/08/2018 7:38:29,Sensor Back Drive,motion,inactive,inactive
+12/08/2018 7:38:39,Camera Driveway,motion,inactive,inactive
+12/08/2018 7:43:29,Driveway Lights,switch,off,off
+12/08/2018 7:51:44,Garage Doors,contact,open,open
+12/08/2018 7:52:36,zAlarmP Upper Doors,contact,open,open
+12/08/2018 7:52:43,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 8:37:38,Bottom Door,lock,unlocked,unlocked
+12/08/2018 8:37:42,zAlarmP Bottom Door,contact,open,open
+12/08/2018 8:37:53,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 9:49:13,Sensor Back Drive,activity,offline,offline
+12/08/2018 10:01:09,Garage Doors,contact,closed,closed
+12/08/2018 10:02:15,Sensor Back Drive,motion,active,active
+12/08/2018 10:02:16,Sensor Back Drive,activity,online,online
+12/08/2018 10:19:46,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:19:50,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 10:20:30,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:20:36,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 10:27:36,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:27:41,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 10:27:56,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:28:01,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 10:40:16,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:40:22,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 10:41:41,zAlarmP Upper Doors,contact,open,open
+12/08/2018 10:41:45,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 11:06:20,zAlarmP GaragePass,contact,open,open
+12/08/2018 11:06:25,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 11:07:40,zAlarmP GaragePass,contact,open,open
+12/08/2018 11:07:45,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 11:10:57,zAlarmP Upper Doors,contact,open,open
+12/08/2018 11:11:03,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 11:11:09,Camera Driveway,motion,active,active
+12/08/2018 11:11:39,Camera Driveway,motion,inactive,inactive
+12/08/2018 11:14:32,zAlarmP Upper Doors,contact,open,open
+12/08/2018 11:14:36,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 11:19:09,zAlarmP Bottom Door,contact,open,open
+12/08/2018 11:19:15,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 11:37:37,zAlarmP Bottom Door,contact,open,open
+12/08/2018 11:37:39,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 12:37:17,Sensor Back Drive,activity,offline,offline
+12/08/2018 13:21:01,zAlarmP Bottom Door,contact,open,open
+12/08/2018 13:21:07,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 13:22:26,zAlarmP Bottom Door,contact,open,open
+12/08/2018 13:22:31,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 13:24:40,zAlarmP GaragePass,contact,open,open
+12/08/2018 13:24:55,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 13:25:09,zAlarmP GaragePass,contact,open,open
+12/08/2018 13:25:13,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 13:27:12,zAlarmP Bottom Door,contact,open,open
+12/08/2018 13:27:17,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:27:21,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:27:28,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:30:27,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:30:49,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:31:15,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:31:21,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:31:39,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:31:44,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:34:39,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:34:44,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:35:39,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:35:42,zAlarmP Back Door,contact,open,open
+12/08/2018 15:35:47,zAlarmP Back Door,contact,closed,closed
+12/08/2018 15:36:29,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:36:41,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:36:51,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:36:54,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:37:01,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:37:05,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:37:11,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:38:31,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:38:35,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:38:37,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:38:40,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:38:45,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:38:50,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:38:52,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:38:54,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:39:07,zAlarmP GaragePass,contact,open,open
+12/08/2018 15:39:11,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 15:39:28,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:39:34,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:39:36,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:39:44,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:39:50,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:39:52,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:40:01,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:40:03,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:40:41,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:40:48,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:41:10,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:41:19,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:41:21,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:41:25,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:41:27,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:41:30,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:41:32,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:41:36,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:41:43,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:41:50,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:42:02,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:42:05,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:42:20,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:42:23,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:42:32,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:42:36,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:42:56,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:43:08,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:43:10,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:43:12,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:43:20,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:43:24,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:43:26,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:43:31,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:43:55,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:43:57,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:44:03,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:44:05,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:44:11,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:44:13,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:48:32,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:48:39,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:49:15,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:49:17,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:49:21,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:49:23,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:58:30,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:58:36,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:58:54,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:59:00,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 15:59:08,zAlarmP Bottom Door,contact,open,open
+12/08/2018 15:59:11,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 16:38:07,Front Door Light,switch,on,on
+12/08/2018 16:38:08,Front Stoop Lights,switch,on,on
+12/08/2018 17:05:59,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:06:00,Bottom Door,lock,locked,locked
+12/08/2018 17:06:02,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:06:18,zAlarmP GaragePass,contact,open,open
+12/08/2018 17:06:20,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 17:06:23,zAlarmP GaragePass,contact,open,open
+12/08/2018 17:06:25,zAlarmP GaragePass,contact,closed,closed
+12/08/2018 17:06:52,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:06:54,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:07:31,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:07:37,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:07:52,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:07:57,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:21:55,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:22:00,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:22:02,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:22:04,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 17:22:36,zAlarmP Bottom Door,contact,open,open
+12/08/2018 17:22:40,zAlarmP Bottom Door,contact,closed,closed
+12/08/2018 18:01:25,zAlarmP Upper Doors,contact,open,open
+12/08/2018 18:01:27,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 18:01:32,zAlarmP Upper Doors,contact,open,open
+12/08/2018 18:02:29,zAlarmP Upper Doors,contact,closed,closed
+12/08/2018 23:00:09,Front Door Light,switch,off,off
+12/08/2018 23:00:09,Front Stoop Lights,switch,off,off
+12/09/2018 2:30:23,zAlarmP Bottom Door,contact,open,open
+12/09/2018 2:30:25,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 6:02:52,Garage Doors,contact,open,open
+12/09/2018 6:02:56,zAlarmP GaragePass,contact,open,open
+12/09/2018 6:03:01,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 6:34:13,Garage Doors,contact,closed,closed
+12/09/2018 7:11:56,zAlarmP Upper Doors,contact,open,open
+12/09/2018 7:12:00,zAlarmP Upper Doors,contact,closed,closed
+12/09/2018 7:13:24,zAlarmP Upper Doors,contact,open,open
+12/09/2018 7:13:28,zAlarmP Upper Doors,contact,closed,closed
+12/09/2018 7:16:08,zAlarmP GaragePass,contact,open,open
+12/09/2018 7:16:12,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 7:16:43,zAlarmP GaragePass,contact,open,open
+12/09/2018 7:16:49,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 7:35:57,zAlarmP Bottom Door,contact,open,open
+12/09/2018 7:36:02,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 7:36:04,zAlarmP Bottom Door,contact,open,open
+12/09/2018 7:36:06,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 7:36:23,zAlarmP Bottom Door,contact,open,open
+12/09/2018 7:36:27,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 7:41:52,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 8:36:51,zAlarmP Bottom Door,contact,open,open
+12/09/2018 8:36:57,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 8:36:59,zAlarmP Bottom Door,contact,open,open
+12/09/2018 8:37:01,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 8:37:10,zAlarmP Bottom Door,contact,open,open
+12/09/2018 8:37:55,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 8:42:03,zAlarmP Upper Doors,contact,open,open
+12/09/2018 8:42:13,zAlarmP Upper Doors,contact,closed,closed
+12/09/2018 9:02:56,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:02:58,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:03:06,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:03:08,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:03:10,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:03:12,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:18:16,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:18:18,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:24:28,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:24:30,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:26:15,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:26:17,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:54:00,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:54:02,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:54:07,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:54:10,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:55:32,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:55:34,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 9:58:13,zAlarmP Bottom Door,contact,open,open
+12/09/2018 9:58:15,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:03:10,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:03:12,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:03:40,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:03:42,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:05:06,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:05:08,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:06:15,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:06:17,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:07:41,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:07:43,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:08:47,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:08:49,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:09:14,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:09:18,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:09:23,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:09:25,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:09:32,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:09:34,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:09:41,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:09:43,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:15:51,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:15:53,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:07,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:10,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:12,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:14,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:16,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:18,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:21,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:23,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:52,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:54,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:16:57,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:16:59,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:17:01,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:17:04,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:17:58,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:18:00,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:18:07,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:18:09,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:18:14,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:18:17,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:19:06,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:19:08,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 10:19:58,zAlarmP Bottom Door,contact,open,open
+12/09/2018 10:20:00,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 11:23:57,zAlarmP GaragePass,contact,open,open
+12/09/2018 11:23:57,Garage Doors,contact,open,open
+12/09/2018 11:24:04,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 11:24:35,Garage Doors,contact,closed,closed
+12/09/2018 13:13:00,Garage Doors,contact,open,open
+12/09/2018 13:13:35,Garage Doors,contact,closed,closed
+12/09/2018 13:13:49,zAlarmP GaragePass,contact,open,open
+12/09/2018 13:13:55,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 13:24:28,Bottom Door,lock,unlocked,unlocked
+12/09/2018 13:24:29,zAlarmP Bottom Door,contact,open,open
+12/09/2018 13:24:39,Bottom Door,lock,locked,locked
+12/09/2018 13:24:39,zAlarmP Bottom Door,contact,closed,closed
+12/09/2018 16:16:36,zAlarmP Upper Doors,contact,open,open
+12/09/2018 16:16:40,zAlarmP Upper Doors,contact,closed,closed
+12/09/2018 16:17:21,Front Door,lock,unlocked,unlocked
+12/09/2018 16:17:53,Front Door,lock,locked,locked
+12/09/2018 16:38:16,Front Door Light,switch,on,on
+12/09/2018 16:38:16,Front Stoop Lights,switch,on,on
+12/09/2018 17:20:33,Garage Doors,contact,open,open
+12/09/2018 17:21:29,zAlarmP GaragePass,contact,open,open
+12/09/2018 17:21:33,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 17:21:41,Garage Doors,contact,closed,closed
+12/09/2018 17:46:32,zAlarmP GaragePass,contact,open,open
+12/09/2018 17:46:52,zAlarmP GaragePass,contact,closed,closed
+12/09/2018 18:30:47,Bottom Door,lock,unlocked,unlocked
+12/09/2018 18:30:48,Bottom Door,lock,locked,locked
+12/09/2018 20:28:42,Back Door Light,activity,offline,offline
+12/09/2018 21:34:43,Back Door Light,activity,online,online
+12/09/2018 23:00:06,Front Stoop Lights,switch,off,off
+12/09/2018 23:00:08,Front Door Light,switch,off,off
+12/10/2018 0:09:29,zAlarmP Bottom Door,contact,open,open
+12/10/2018 0:09:37,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 0:09:40,zAlarmP Bottom Door,contact,open,open
+12/10/2018 0:09:42,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 0:10:05,zAlarmP Bottom Door,contact,open,open
+12/10/2018 0:10:07,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 1:17:28,zAlarmP Bottom Door,contact,open,open
+12/10/2018 1:17:33,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 1:17:35,zAlarmP Bottom Door,contact,open,open
+12/10/2018 1:17:37,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 1:53:42,Back Door Light,activity,offline,offline
+12/10/2018 2:00:10,zAlarmP Bottom Door,contact,open,open
+12/10/2018 2:00:12,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 2:25:42,Back Door Light,activity,online,online
+12/10/2018 3:00:35,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:00:37,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 3:00:40,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:00:42,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 3:00:44,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:00:46,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 3:01:15,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:01:18,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 3:01:20,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:01:22,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 3:09:12,zAlarmP Bottom Door,contact,open,open
+12/10/2018 3:09:14,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 4:00:52,zAlarmP Bottom Door,contact,open,open
+12/10/2018 4:01:03,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 4:01:05,zAlarmP Bottom Door,contact,open,open
+12/10/2018 4:01:07,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 4:03:27,Back Door Light,activity,offline,offline
+12/10/2018 4:18:18,zAlarmP Bottom Door,contact,open,open
+12/10/2018 4:18:20,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 4:35:28,Back Door Light,activity,online,online
+12/10/2018 4:51:03,zAlarmP Bottom Door,contact,open,open
+12/10/2018 4:51:05,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 5:08:40,Back Door Light,activity,offline,offline
+12/10/2018 5:51:34,zAlarmP Bottom Door,contact,open,open
+12/10/2018 5:51:37,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 6:07:11,zAlarmP Bottom Door,contact,open,open
+12/10/2018 6:07:13,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 6:22:14,zAlarmP Bottom Door,contact,open,open
+12/10/2018 6:22:18,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 6:52:41,Back Door Light,activity,online,online
+12/10/2018 8:34:31,Back Door Light,activity,offline,offline
+12/10/2018 8:47:58,Bottom Door,lock,unlocked,unlocked
+12/10/2018 8:48:03,zAlarmP Bottom Door,contact,open,open
+12/10/2018 8:48:24,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 8:48:25,Bottom Door,lock,locked,locked
+12/10/2018 9:06:37,Back Door Light,activity,online,online
+12/10/2018 9:17:11,zAlarmP Upper Doors,contact,open,open
+12/10/2018 9:17:16,zAlarmP Upper Doors,contact,closed,closed
+12/10/2018 9:18:31,Bottom Door,lock,unlocked,unlocked
+12/10/2018 9:18:32,zAlarmP Bottom Door,contact,open,open
+12/10/2018 9:18:37,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 9:39:43,Back Door Light,activity,offline,offline
+12/10/2018 10:11:44,Back Door Light,activity,online,online
+12/10/2018 10:44:54,Back Door Light,activity,offline,offline
+12/10/2018 10:49:35,zAlarmP Bottom Door,contact,open,open
+12/10/2018 10:49:40,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 10:51:07,zAlarmP Bottom Door,contact,open,open
+12/10/2018 10:51:12,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 11:51:01,Back Door Light,activity,online,online
+12/10/2018 12:04:06,Garage Doors,contact,open,open
+12/10/2018 12:06:28,zAlarmP Upper Doors,contact,open,open
+12/10/2018 12:06:37,zAlarmP Upper Doors,contact,closed,closed
+12/10/2018 12:06:44,Camera Driveway,motion,active,active
+12/10/2018 12:07:14,Camera Driveway,motion,inactive,inactive
+12/10/2018 12:07:15,Garage Doors,contact,closed,closed
+12/10/2018 12:24:04,Back Door Light,activity,offline,offline
+12/10/2018 12:56:19,Driveway Lights,activity,hubDisconnected,hubDisconnected
+12/10/2018 12:56:19,Front Door Light,activity,hubDisconnected,hubDisconnected
+12/10/2018 12:56:19,Front Stoop Lights,activity,hubDisconnected,hubDisconnected
+12/10/2018 12:56:52,Driveway Lights,activity,online,online
+12/10/2018 12:56:52,Front Door Light,activity,online,online
+12/10/2018 12:56:52,Front Stoop Lights,activity,online,online
+12/10/2018 13:00:14,Back Door Light,activity,online,online
+12/10/2018 13:04:17,Garage Doors,contact,open,open
+12/10/2018 13:04:57,zAlarmP Upper Doors,contact,open,open
+12/10/2018 13:05:01,zAlarmP Upper Doors,contact,closed,closed
+12/10/2018 13:07:40,Front Door,lock,unlocked,unlocked
+12/10/2018 13:08:12,Front Door,lock,locked,locked
+12/10/2018 13:09:15,Front Door,lock,unlocked,unlocked
+12/10/2018 13:09:47,Front Door,lock,locked,locked
+12/10/2018 13:59:07,Back Door Light,activity,offline,offline
+12/10/2018 14:21:08,Back Door Light,activity,online,online
+12/10/2018 14:54:27,Back Door Light,activity,offline,offline
+12/10/2018 15:26:28,Back Door Light,activity,online,online
+12/10/2018 15:37:11,zAlarmP Bottom Door,contact,open,open
+12/10/2018 15:37:13,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 15:37:15,zAlarmP Bottom Door,contact,open,open
+12/10/2018 15:37:28,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 15:37:57,zAlarmP Bottom Door,contact,open,open
+12/10/2018 15:37:59,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 16:19:52,Camera back door,motion,active,active
+12/10/2018 16:20:22,Camera back door,motion,inactive,inactive
+12/10/2018 16:31:51,Back Door Light,activity,offline,offline
+12/10/2018 16:38:25,Front Door Light,switch,on,on
+12/10/2018 16:38:26,Front Stoop Lights,switch,on,on
+12/10/2018 16:49:47,zAlarmP Bottom Door,contact,open,open
+12/10/2018 16:50:19,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 17:07:05,Bottom Door,lock,locked,locked
+12/10/2018 17:08:39,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:08:56,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:09:32,Garage Doors,contact,closed,closed
+12/10/2018 17:10:12,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:10:15,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:10:18,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:10:20,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:10:30,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:10:33,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:10:35,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:11:02,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:11:04,zAlarmP GaragePass,contact,open,open
+12/10/2018 17:11:06,zAlarmP GaragePass,contact,closed,closed
+12/10/2018 17:11:19,zAlarmP GaragePass,contact,open,open
+12/10/2018 18:08:07,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:08:13,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:08:29,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:08:36,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:09:06,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:09:09,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:13:57,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:02,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:04,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:08,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:10,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:12,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:14,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:16,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:18,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:21,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:23,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:25,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:27,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:29,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:31,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:33,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:35,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:38,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:40,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:14:44,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:14:59,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:15:04,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:23:02,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:23:09,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 18:48:14,zAlarmP Bottom Door,contact,open,open
+12/10/2018 18:48:22,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:01:57,Back Door Light,activity,online,online
+12/10/2018 19:10:09,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:10:19,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:10:37,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:10:42,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:10:44,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:10:46,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:11:09,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:11:16,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:11:20,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:11:23,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:11:47,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:11:58,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:11:59,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:12:02,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:12:17,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:12:21,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:12:23,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:12:26,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:12:43,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:12:50,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:13:28,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:13:33,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:14:07,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:14:12,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:16:50,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:17:11,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:17:13,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:17:15,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:17:19,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:17:22,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:20:45,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:20:57,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:22:37,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:22:41,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 19:35:04,Back Door Light,activity,offline,offline
+12/10/2018 19:57:32,zAlarmP Bottom Door,contact,open,open
+12/10/2018 19:57:36,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 20:35:28,Camera back door,motion,active,active
+12/10/2018 20:35:58,Camera back door,motion,inactive,inactive
+12/10/2018 20:53:30,zAlarmP Bottom Door,contact,open,open
+12/10/2018 20:53:36,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 20:53:58,zAlarmP Bottom Door,contact,open,open
+12/10/2018 20:54:05,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 20:59:15,Garage Doors,contact,open,open
+12/10/2018 21:00:07,Garage Doors,contact,closed,closed
+12/10/2018 21:00:31,Front Door,lock,unlocked,unlocked
+12/10/2018 21:00:42,Front Door,lock,locked,locked
+12/10/2018 21:13:10,zAlarmP Bottom Door,contact,open,open
+12/10/2018 21:13:12,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 21:19:05,Back Door Light,activity,online,online
+12/10/2018 21:42:28,zAlarmP Bottom Door,contact,open,open
+12/10/2018 21:42:45,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 21:42:58,zAlarmP Bottom Door,contact,open,open
+12/10/2018 21:43:03,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 21:43:14,zAlarmP Bottom Door,contact,open,open
+12/10/2018 21:43:19,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 21:43:35,zAlarmP Bottom Door,contact,open,open
+12/10/2018 21:43:41,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:02:36,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:02:39,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:07:00,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:07:07,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:07:14,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:07:18,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:07:40,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:07:43,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:09:18,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:09:24,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:09:38,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:09:40,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:12:26,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:12:32,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:12:45,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:12:47,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:13:04,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:13:09,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:13:15,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:13:19,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:13:42,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:13:46,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:14:25,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:14:32,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:14:49,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:14:52,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:27:45,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:27:52,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:28:05,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:28:10,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:38:23,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:38:26,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:38:53,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:38:59,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:48:28,Back Door Light,activity,offline,offline
+12/10/2018 22:52:15,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:52:23,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 22:52:54,zAlarmP Bottom Door,contact,open,open
+12/10/2018 22:53:01,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 23:00:05,Front Door Light,switch,off,off
+12/10/2018 23:00:06,Front Stoop Lights,switch,off,off
+12/10/2018 23:10:23,zAlarmP Bottom Door,contact,open,open
+12/10/2018 23:10:26,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 23:14:30,zAlarmP Bottom Door,contact,open,open
+12/10/2018 23:14:34,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 23:20:31,Back Door Light,activity,online,online
+12/10/2018 23:40:52,zAlarmP Bottom Door,contact,open,open
+12/10/2018 23:40:54,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 23:42:41,zAlarmP Bottom Door,contact,open,open
+12/10/2018 23:42:45,zAlarmP Bottom Door,contact,closed,closed
+12/10/2018 23:53:51,Back Door Light,activity,offline,offline
+12/11/2018 0:05:51,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:05:56,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:06:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:06:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:06:55,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:06:57,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:06:59,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:07:06,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:07:22,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:07:29,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:07:40,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:07:47,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:09:58,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:10:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:10:10,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:10:15,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:10:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:11:01,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:11:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:11:26,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:11:36,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:11:41,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:12:07,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:12:19,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:12:24,Back Door Light,activity,online,online
+12/11/2018 0:13:11,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:13:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:18:29,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:18:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:18:34,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:18:36,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:18:38,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:18:41,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:18:43,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:18:46,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:18:57,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:19:00,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:19:12,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:19:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:19:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:19:44,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:24:39,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:24:48,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:27:02,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:27:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:45:38,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:45:50,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:45:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:45:54,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:47:28,Back Door Light,activity,offline,offline
+12/11/2018 0:47:31,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:47:33,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 0:47:35,zAlarmP Bottom Door,contact,open,open
+12/11/2018 0:47:37,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:01:00,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:01:21,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:01:26,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:01:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:01:34,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:01:36,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:01:38,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:01:40,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:01:55,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:02:31,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:02:44,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:02:46,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:02:48,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:02:51,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:02:54,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:23:25,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:23:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:25:16,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:25:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:40:38,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:40:45,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:46:35,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:46:42,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:46:44,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:46:46,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:46:53,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:47:02,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 1:47:23,zAlarmP Bottom Door,contact,open,open
+12/11/2018 1:47:30,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:00:00,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:00:15,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:02:30,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:02:47,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:02:55,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:02:58,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:03:08,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:03:16,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:03:20,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:03:22,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:03:24,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:03:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:03:50,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:03:56,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:04:20,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:04:24,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:04:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:05:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:05:17,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:05:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:05:25,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:05:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:06:46,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:06:55,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:09:17,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:09:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:25:29,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:25:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:36:20,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:36:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:36:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:36:47,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:36:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:36:58,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:37:02,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:37:06,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:37:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:37:24,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 2:37:32,zAlarmP Bottom Door,contact,open,open
+12/11/2018 2:37:36,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:25:56,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:26:11,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:26:25,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:26:30,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:26:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:27:02,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:27:05,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:27:07,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:27:09,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:27:11,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:28:28,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:28:36,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 4:30:51,zAlarmP Bottom Door,contact,open,open
+12/11/2018 4:30:55,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 6:42:09,Back Door Light,activity,online,online
+12/11/2018 7:21:31,Camera back door,motion,active,active
+12/11/2018 7:22:01,Camera back door,motion,inactive,inactive
+12/11/2018 7:23:49,Camera back door,motion,active,active
+12/11/2018 7:24:19,Camera back door,motion,inactive,inactive
+12/11/2018 7:38:24,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 7:38:26,zAlarmP GaragePass,contact,open,open
+12/11/2018 7:38:30,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 7:38:52,zAlarmP Back Door,contact,open,open
+12/11/2018 7:38:54,Back Door,lock,unlocked,unlocked
+12/11/2018 7:38:57,zAlarmP Back Door,contact,closed,closed
+12/11/2018 7:39:02,Camera back door,motion,active,active
+12/11/2018 7:39:32,Camera back door,motion,inactive,inactive
+12/11/2018 7:40:00,Camera back door,motion,active,active
+12/11/2018 7:40:07,zAlarmP Back Door,contact,open,open
+12/11/2018 7:40:11,zAlarmP Back Door,contact,closed,closed
+12/11/2018 7:40:15,Back Door,lock,locked,locked
+12/11/2018 7:40:27,zAlarmP GaragePass,contact,open,open
+12/11/2018 7:40:30,Camera back door,motion,inactive,inactive
+12/11/2018 7:40:32,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 8:30:03,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:30:05,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:33:23,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:33:25,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:34:20,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:34:30,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:34:32,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:34:35,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:34:37,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:34:39,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:34:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:34:43,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:35:04,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:35:19,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:35:36,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:35:48,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:35:58,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:36:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:36:31,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:36:40,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:37:40,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:37:42,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:37:54,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:37:56,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:38:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:38:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:38:47,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:38:55,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:39:09,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:39:15,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:39:42,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:39:51,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:40:24,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:40:34,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:40:59,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:41:09,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:41:25,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:41:31,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:41:40,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:41:45,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:41:50,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:41:52,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:41:57,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:42:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:50:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:50:29,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:50:32,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:50:37,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:50:43,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:50:45,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:50:47,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:50:49,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:56:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:57:11,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:57:21,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:57:29,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:57:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:57:43,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:57:54,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:58:01,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:58:04,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:58:06,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:58:08,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:58:10,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:58:12,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:58:14,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:58:19,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:58:29,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:58:33,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:05,Back Door Light,activity,offline,offline
+12/11/2018 8:59:07,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:13,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:15,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:21,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:24,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:26,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:31,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:39,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:44,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:46,zAlarmP Bottom Door,contact,open,open
+12/11/2018 8:59:48,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 8:59:57,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:00:00,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:00:02,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:00:05,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:00:50,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:01:01,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:01:06,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:01:09,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:01:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:01:27,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:01:30,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:01:32,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:01:37,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:01:44,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:08:24,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:08:30,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:10:18,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:10:20,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 9:17:23,zAlarmP Bottom Door,contact,open,open
+12/11/2018 9:17:49,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 10:03:53,Back Door Light,activity,online,online
+12/11/2018 10:37:09,Back Door Light,activity,offline,offline
+12/11/2018 10:57:05,zAlarmP Upper Doors,contact,open,open
+12/11/2018 10:57:31,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 11:32:13,Bottom Door,lock,unlocked,unlocked
+12/11/2018 11:32:15,zAlarmP Bottom Door,contact,open,open
+12/11/2018 11:33:59,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 11:43:11,Back Door Light,activity,online,online
+12/11/2018 12:24:20,Garage Doors,contact,open,open
+12/11/2018 12:26:31,zAlarmP Upper Doors,contact,open,open
+12/11/2018 12:26:47,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 12:26:52,Camera Driveway,motion,active,active
+12/11/2018 12:27:22,Camera Driveway,motion,inactive,inactive
+12/11/2018 12:27:39,zAlarmP Upper Doors,contact,open,open
+12/11/2018 12:28:07,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 12:29:30,zAlarmP Upper Doors,contact,open,open
+12/11/2018 12:29:33,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 12:29:50,zAlarmP Upper Doors,contact,open,open
+12/11/2018 12:29:56,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 12:30:12,Camera Driveway,motion,active,active
+12/11/2018 12:30:42,Camera Driveway,motion,inactive,inactive
+12/11/2018 12:31:05,Camera Driveway,motion,active,active
+12/11/2018 12:31:32,Garage Doors,contact,closed,closed
+12/11/2018 12:31:35,Camera Driveway,motion,inactive,inactive
+12/11/2018 13:17:03,Garage Doors,contact,open,open
+12/11/2018 13:17:04,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:17:08,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:17:12,Garage Doors,contact,closed,closed
+12/11/2018 13:17:13,Garage Doors,contact,open,open
+12/11/2018 13:19:43,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:19:48,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:19:53,Garage Doors,contact,closed,closed
+12/11/2018 13:49:36,Camera Driveway,motion,active,active
+12/11/2018 13:50:06,Camera Driveway,motion,inactive,inactive
+12/11/2018 13:50:20,Camera Driveway,motion,active,active
+12/11/2018 13:50:22,zAlarmP Upper Doors,contact,open,open
+12/11/2018 13:50:26,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 13:50:50,Camera Driveway,motion,inactive,inactive
+12/11/2018 13:51:05,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:51:16,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:51:22,Back Door,lock,unlocked,unlocked
+12/11/2018 13:51:23,zAlarmP Back Door,contact,open,open
+12/11/2018 13:51:26,zAlarmP Back Door,contact,closed,closed
+12/11/2018 13:51:32,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:51:35,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:51:37,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:51:39,Garage Doors,contact,open,open
+12/11/2018 13:51:41,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:52:51,zAlarmP GaragePass,contact,open,open
+12/11/2018 13:52:58,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 13:53:03,Garage Doors,contact,closed,closed
+12/11/2018 13:54:00,zAlarmP Back Door,contact,open,open
+12/11/2018 13:54:09,zAlarmP Back Door,contact,closed,closed
+12/11/2018 13:55:11,zAlarmP Back Door,contact,open,open
+12/11/2018 13:55:15,zAlarmP Back Door,contact,closed,closed
+12/11/2018 13:56:17,zAlarmP Back Door,contact,open,open
+12/11/2018 13:56:47,zAlarmP Back Door,contact,closed,closed
+12/11/2018 13:57:04,zAlarmP Back Door,contact,open,open
+12/11/2018 13:57:08,zAlarmP Back Door,contact,closed,closed
+12/11/2018 14:02:54,zAlarmP Back Door,contact,open,open
+12/11/2018 14:03:00,zAlarmP Back Door,contact,closed,closed
+12/11/2018 14:05:47,zAlarmP Back Door,contact,open,open
+12/11/2018 14:05:54,zAlarmP Back Door,contact,closed,closed
+12/11/2018 14:09:41,zAlarmP Upper Doors,contact,open,open
+12/11/2018 14:09:45,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 14:12:46,zAlarmP Bottom Door,contact,open,open
+12/11/2018 14:13:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 14:13:30,Bottom Door,lock,locked,locked
+12/11/2018 15:02:08,Front Door,lock,unlocked,unlocked
+12/11/2018 15:02:22,Camera front drive,motion,active,active
+12/11/2018 15:02:29,Bottom Door,lock,unlocked,unlocked
+12/11/2018 15:02:33,zAlarmP Bottom Door,contact,open,open
+12/11/2018 15:02:43,Front Door,lock,locked,locked
+12/11/2018 15:03:04,Front Door,lock,unlocked,unlocked
+12/11/2018 15:03:16,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 15:03:19,Front Door,lock,locked,locked
+12/11/2018 15:03:20,Camera front drive,motion,inactive,inactive
+12/11/2018 15:03:22,Bottom Door,lock,locked,locked
+12/11/2018 15:10:06,Camera back door,motion,active,active
+12/11/2018 15:10:36,Camera back door,motion,inactive,inactive
+12/11/2018 15:13:42,Camera front drive,motion,active,active
+12/11/2018 15:14:37,Camera front drive,motion,inactive,inactive
+12/11/2018 15:15:26,Camera back door,motion,active,active
+12/11/2018 15:15:56,Camera back door,motion,inactive,inactive
+12/11/2018 15:18:57,Camera front drive,motion,active,active
+12/11/2018 15:19:27,Camera front drive,motion,inactive,inactive
+12/11/2018 15:19:28,Front Door,lock,unlocked,unlocked
+12/11/2018 15:19:36,Bottom Door,lock,unlocked,unlocked
+12/11/2018 15:19:40,zAlarmP Bottom Door,contact,open,open
+12/11/2018 15:19:59,Front Door,lock,locked,locked
+12/11/2018 15:20:17,Bottom Door,lock,locked,locked
+12/11/2018 15:20:17,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 15:22:03,Front Door,lock,unlocked,unlocked
+12/11/2018 15:22:07,Camera front drive,motion,active,active
+12/11/2018 15:22:36,Front Door,lock,locked,locked
+12/11/2018 15:22:37,Camera front drive,motion,inactive,inactive
+12/11/2018 15:49:27,Back Door Light,activity,offline,offline
+12/11/2018 15:49:38,Bottom Door,lock,unlocked,unlocked
+12/11/2018 15:49:41,zAlarmP Bottom Door,contact,open,open
+12/11/2018 15:49:43,Front Door,lock,unlocked,unlocked
+12/11/2018 15:49:47,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 15:49:49,Bottom Door,lock,locked,locked
+12/11/2018 15:49:58,Camera front drive,motion,active,active
+12/11/2018 15:50:14,Front Door,lock,locked,locked
+12/11/2018 15:50:28,Camera front drive,motion,inactive,inactive
+12/11/2018 15:50:59,Camera front drive,motion,active,active
+12/11/2018 15:51:15,Front Door,lock,unlocked,unlocked
+12/11/2018 15:51:22,Front Door,lock,locked,locked
+12/11/2018 15:51:26,Camera back door,motion,active,active
+12/11/2018 15:51:29,Camera front drive,motion,inactive,inactive
+12/11/2018 15:51:56,Camera back door,motion,inactive,inactive
+12/11/2018 16:26:05,zAlarmP Upper Doors,contact,open,open
+12/11/2018 16:26:08,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 16:26:39,zAlarmP GaragePass,contact,open,open
+12/11/2018 16:26:47,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 16:28:52,Garage Doors,contact,open,open
+12/11/2018 16:34:55,Garage Doors,contact,closed,closed
+12/11/2018 16:38:35,Front Stoop Lights,switch,on,on
+12/11/2018 16:38:36,Front Door Light,switch,on,on
+12/11/2018 16:40:20,Camera front drive,motion,active,active
+12/11/2018 16:40:50,Camera front drive,motion,inactive,inactive
+12/11/2018 16:41:30,zAlarmP Back Door,contact,open,open
+12/11/2018 16:42:18,zAlarmP Back Door,contact,closed,closed
+12/11/2018 16:43:24,zAlarmP Back Door,contact,open,open
+12/11/2018 16:43:29,zAlarmP Back Door,contact,closed,closed
+12/11/2018 16:44:02,zAlarmP Back Door,contact,open,open
+12/11/2018 16:44:09,zAlarmP Back Door,contact,closed,closed
+12/11/2018 16:44:17,Camera back door,motion,active,active
+12/11/2018 16:44:47,Camera back door,motion,inactive,inactive
+12/11/2018 16:45:48,Bottom Door,lock,unlocked,unlocked
+12/11/2018 16:45:51,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:45:58,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:46:06,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:46:12,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:46:17,zAlarmP GaragePass,contact,open,open
+12/11/2018 16:46:40,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 16:47:07,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:47:24,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:47:52,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:48:39,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:50:04,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:50:12,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:50:26,zAlarmP GaragePass,contact,open,open
+12/11/2018 16:50:48,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 16:51:07,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:51:13,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:51:15,zAlarmP Bottom Door,contact,open,open
+12/11/2018 16:51:28,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 16:51:30,Bottom Door,lock,locked,locked
+12/11/2018 16:51:31,Bottom Door,lock,unlocked,unlocked
+12/11/2018 16:51:32,Bottom Door,lock,locked,locked
+12/11/2018 16:51:34,Bottom Door,lock,unlocked,unlocked
+12/11/2018 16:51:35,Bottom Door,lock,locked,locked
+12/11/2018 16:51:40,Bottom Door,lock,unlocked,unlocked
+12/11/2018 16:51:52,Bottom Door,lock,locked,locked
+12/11/2018 16:55:27,Back Door Light,activity,online,online
+12/11/2018 17:06:50,zAlarmP GaragePass,contact,open,open
+12/11/2018 17:06:54,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 17:07:17,zAlarmP Back Door,contact,open,open
+12/11/2018 17:07:21,zAlarmP Back Door,contact,closed,closed
+12/11/2018 17:07:23,Back Door,lock,locked,locked
+12/11/2018 17:10:06,Back Door,lock,unlocked,unlocked
+12/11/2018 17:10:08,zAlarmP Back Door,contact,open,open
+12/11/2018 17:10:20,zAlarmP Back Door,contact,closed,closed
+12/11/2018 17:15:12,zAlarmP Upper Doors,contact,open,open
+12/11/2018 17:15:16,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 17:27:22,zAlarmP Upper Doors,contact,open,open
+12/11/2018 17:27:25,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 17:27:34,Camera Driveway,motion,active,active
+12/11/2018 17:28:04,Camera Driveway,motion,inactive,inactive
+12/11/2018 17:28:32,zAlarmP Upper Doors,contact,open,open
+12/11/2018 17:28:39,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 17:40:59,zAlarmP Upper Doors,contact,open,open
+12/11/2018 17:41:03,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 17:41:09,Camera Driveway,motion,active,active
+12/11/2018 17:41:39,Camera Driveway,motion,inactive,inactive
+12/11/2018 17:41:52,Camera Driveway,motion,active,active
+12/11/2018 17:42:22,Camera Driveway,motion,inactive,inactive
+12/11/2018 17:47:40,Garage Doors,contact,open,open
+12/11/2018 17:48:09,Garage Doors,contact,closed,closed
+12/11/2018 17:48:10,zAlarmP GaragePass,contact,open,open
+12/11/2018 17:48:18,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 18:55:44,Bottom Door,lock,unlocked,unlocked
+12/11/2018 18:55:47,zAlarmP Bottom Door,contact,open,open
+12/11/2018 18:55:54,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 18:57:05,zAlarmP Bottom Door,contact,open,open
+12/11/2018 18:57:12,zAlarmP Bottom Door,contact,closed,closed
+12/11/2018 18:57:15,Bottom Door,lock,locked,locked
+12/11/2018 19:05:06,zAlarmP GaragePass,contact,open,open
+12/11/2018 19:05:11,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 19:05:29,zAlarmP Back Door,contact,open,open
+12/11/2018 19:05:41,zAlarmP Back Door,contact,closed,closed
+12/11/2018 19:05:55,Back Door,lock,locked,locked
+12/11/2018 19:08:24,zAlarmP GaragePass,contact,open,open
+12/11/2018 19:08:28,zAlarmP GaragePass,contact,closed,closed
+12/11/2018 19:10:29,zAlarmP Upper Doors,contact,open,open
+12/11/2018 19:10:33,zAlarmP Upper Doors,contact,closed,closed
+12/11/2018 19:23:21,Driveway Lights,switch,on,on
+12/11/2018 19:23:29,Driveway Lights,switch,off,off
+12/11/2018 19:37:28,Back Door Light,activity,offline,offline
+12/11/2018 19:54:47,Back Door Light,activity,online,online
+12/11/2018 20:07:15,Back Door Light,switch,on,on
+12/11/2018 20:07:15,Camera back door,motion,active,active
+12/11/2018 20:07:45,Camera back door,motion,inactive,inactive
+12/11/2018 22:51:45,Back Door Light,switch,off,off
+12/11/2018 22:51:50,Front Door Light,switch,off,off
+12/11/2018 22:51:50,Front Stoop Lights,switch,off,off
+12/12/2018 3:41:13,Back Door Light,switch,on,on
+12/12/2018 3:41:13,Camera back door,motion,active,active
+12/12/2018 3:41:43,Camera back door,motion,inactive,inactive
+12/12/2018 4:44:18,Camera back door,motion,active,active
+12/12/2018 4:44:48,Camera back door,motion,inactive,inactive
+12/12/2018 6:05:57,zAlarmP Bottom Door,contact,open,open
+12/12/2018 6:05:59,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 6:11:10,zAlarmP Bottom Door,contact,open,open
+12/12/2018 6:11:12,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 6:19:08,zAlarmP Bottom Door,contact,open,open
+12/12/2018 6:19:13,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 6:37:58,zAlarmP Bottom Door,contact,open,open
+12/12/2018 6:38:00,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 7:30:00,Back Door Light,switch,off,off
+12/12/2018 7:33:00,Camera back door,motion,active,active
+12/12/2018 7:33:30,Camera back door,motion,inactive,inactive
+12/12/2018 8:22:32,zAlarmP Upper Doors,contact,open,open
+12/12/2018 8:22:38,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 8:23:06,zAlarmP Bottom Door,contact,open,open
+12/12/2018 8:23:08,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 8:23:30,zAlarmP Upper Doors,contact,open,open
+12/12/2018 8:23:41,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 8:24:04,zAlarmP Bottom Door,contact,open,open
+12/12/2018 8:24:06,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 8:24:11,Camera front drive,motion,active,active
+12/12/2018 8:24:41,Camera front drive,motion,inactive,inactive
+12/12/2018 8:26:05,zAlarmP Upper Doors,contact,open,open
+12/12/2018 8:26:09,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 8:27:06,zAlarmP Bottom Door,contact,open,open
+12/12/2018 8:27:08,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 8:31:06,zAlarmP Bottom Door,contact,open,open
+12/12/2018 8:31:08,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 8:39:00,Camera back door,motion,active,active
+12/12/2018 8:39:30,Camera back door,motion,inactive,inactive
+12/12/2018 9:21:01,Garage Doors,contact,open,open
+12/12/2018 9:21:43,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:21:51,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 9:21:53,Camera Driveway,motion,active,active
+12/12/2018 9:22:23,Camera Driveway,motion,inactive,inactive
+12/12/2018 9:23:59,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:24:03,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 9:24:18,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:24:21,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 9:24:58,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:25:02,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 9:40:57,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:40:59,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 9:41:03,Camera Driveway,motion,active,active
+12/12/2018 9:41:33,Camera Driveway,motion,inactive,inactive
+12/12/2018 9:43:37,Garage Doors,contact,closed,closed
+12/12/2018 9:43:50,zAlarmP Upper Doors,contact,open,open
+12/12/2018 9:43:54,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 10:24:56,Bottom Door,lock,unlocked,unlocked
+12/12/2018 10:24:59,zAlarmP Bottom Door,contact,open,open
+12/12/2018 10:25:46,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 10:25:48,Bottom Door,lock,locked,locked
+12/12/2018 10:39:27,Garage Doors,contact,open,open
+12/12/2018 10:40:51,Camera Driveway,motion,active,active
+12/12/2018 10:41:13,zAlarmP Upper Doors,contact,open,open
+12/12/2018 10:41:18,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 10:41:21,Camera Driveway,motion,inactive,inactive
+12/12/2018 11:27:25,zAlarmP Upper Doors,contact,open,open
+12/12/2018 11:27:30,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 11:36:16,Garage Doors,contact,closed,closed
+12/12/2018 13:04:42,Garage Doors,contact,open,open
+12/12/2018 13:06:12,Camera Driveway,motion,active,active
+12/12/2018 13:06:28,zAlarmP Upper Doors,contact,open,open
+12/12/2018 13:06:42,Camera Driveway,motion,inactive,inactive
+12/12/2018 13:06:53,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 14:18:43,Bottom Door,lock,unknown,unknown
+12/12/2018 14:18:43,Bottom Door,lock,unlocked,unlocked
+12/12/2018 14:18:46,zAlarmP Bottom Door,contact,open,open
+12/12/2018 14:18:52,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 14:18:58,Bottom Door,lock,unlocked,unlocked
+12/12/2018 14:20:38,zAlarmP Bottom Door,contact,open,open
+12/12/2018 14:20:44,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 14:44:41,Back Door Light,activity,hubDisconnected,hubDisconnected
+12/12/2018 14:44:46,Back Door Light,activity,online,online
+12/12/2018 14:45:03,Driveway Lights,activity,hubDisconnected,hubDisconnected
+12/12/2018 14:45:06,Driveway Lights,activity,online,online
+12/12/2018 14:45:34,Front Door Light,activity,hubDisconnected,hubDisconnected
+12/12/2018 14:45:41,Front Door Light,activity,online,online
+12/12/2018 14:49:42,Front Stoop Lights,activity,hubDisconnected,hubDisconnected
+12/12/2018 14:49:48,Front Stoop Lights,activity,online,online
+12/12/2018 15:11:25,zAlarmP GaragePass,contact,open,open
+12/12/2018 15:12:03,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 15:12:11,Garage Doors,contact,closed,closed
+12/12/2018 15:29:38,zAlarmP Bottom Door,contact,open,open
+12/12/2018 15:29:45,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 15:38:18,zAlarmP Bottom Door,contact,open,open
+12/12/2018 15:38:23,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 15:38:54,zAlarmP Bottom Door,contact,open,open
+12/12/2018 15:39:01,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 15:49:16,zAlarmP Upper Doors,contact,open,open
+12/12/2018 15:49:25,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 16:12:55,zAlarmP Upper Doors,contact,open,open
+12/12/2018 16:12:59,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 16:13:09,Camera Driveway,motion,active,active
+12/12/2018 16:13:39,Camera Driveway,motion,inactive,inactive
+12/12/2018 16:13:55,zAlarmP Back Door,contact,open,open
+12/12/2018 16:14:01,zAlarmP Back Door,contact,closed,closed
+12/12/2018 16:15:09,zAlarmP GaragePass,contact,open,open
+12/12/2018 16:15:15,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 16:15:25,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:15:46,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:15:54,zAlarmP GaragePass,contact,open,open
+12/12/2018 16:16:26,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 16:16:38,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:16:51,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:16:53,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:17:16,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:18:32,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:21:13,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:21:35,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:24:05,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:24:16,zAlarmP Bottom Door,contact,open,open
+12/12/2018 16:24:26,zAlarmP Bottom Door,contact,closed,closed
+12/12/2018 16:25:21,zAlarmP GaragePass,contact,open,open
+12/12/2018 16:25:31,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 16:29:29,zAlarmP Back Door,contact,open,open
+12/12/2018 16:29:34,zAlarmP Back Door,contact,closed,closed
+12/12/2018 16:31:10,zAlarmP Upper Doors,contact,open,open
+12/12/2018 16:31:14,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 16:38:47,Front Stoop Lights,switch,on,on
+12/12/2018 16:38:51,Front Door Light,switch,on,on
+12/12/2018 16:52:37,Back Door Light,activity,offline,offline
+12/12/2018 16:58:55,zAlarmP Upper Doors,contact,open,open
+12/12/2018 16:58:59,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 16:59:06,Camera Driveway,motion,active,active
+12/12/2018 16:59:36,Camera Driveway,motion,inactive,inactive
+12/12/2018 17:00:03,Camera Driveway,motion,active,active
+12/12/2018 17:00:07,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:00:11,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:00:33,Camera Driveway,motion,inactive,inactive
+12/12/2018 17:01:17,Garage Doors,contact,open,open
+12/12/2018 17:01:21,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:01:24,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:01:29,Camera Driveway,motion,active,active
+12/12/2018 17:01:59,Camera Driveway,motion,inactive,inactive
+12/12/2018 17:07:04,Bottom Door,lock,locked,locked
+12/12/2018 17:16:13,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:16:15,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:16:35,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:16:37,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:18:10,Camera Driveway,motion,active,active
+12/12/2018 17:18:14,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:18:17,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:18:40,Camera Driveway,motion,inactive,inactive
+12/12/2018 17:28:25,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:28:29,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:28:34,Camera Driveway,motion,active,active
+12/12/2018 17:29:04,Camera Driveway,motion,inactive,inactive
+12/12/2018 17:41:20,Back Door,lock,unlocked,unlocked
+12/12/2018 17:41:22,zAlarmP Back Door,contact,open,open
+12/12/2018 17:41:26,zAlarmP Back Door,contact,closed,closed
+12/12/2018 17:42:18,Driveway Lights,switch,on,on
+12/12/2018 17:43:20,zAlarmP Upper Doors,contact,open,open
+12/12/2018 17:43:24,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 17:43:26,Garage Doors,contact,closed,closed
+12/12/2018 17:48:21,Driveway Lights,switch,off,off
+12/12/2018 17:58:28,Back Door,lock,locked,locked
+12/12/2018 18:01:56,Garage Doors,contact,open,open
+12/12/2018 18:02:49,zAlarmP GaragePass,contact,open,open
+12/12/2018 18:02:54,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 18:03:11,zAlarmP GaragePass,contact,open,open
+12/12/2018 18:03:15,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 18:03:39,Driveway Lights,switch,on,on
+12/12/2018 18:04:19,zAlarmP GaragePass,contact,open,open
+12/12/2018 18:04:22,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 18:05:28,zAlarmP GaragePass,contact,open,open
+12/12/2018 18:05:31,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 18:06:10,Garage Doors,contact,closed,closed
+12/12/2018 18:22:19,zAlarmP GaragePass,contact,open,open
+12/12/2018 18:22:22,zAlarmP GaragePass,contact,closed,closed
+12/12/2018 18:36:37,Back Door Light,switch,on,on
+12/12/2018 18:36:38,Back Door Light,activity,online,online
+12/12/2018 20:41:05,Garage Doors,contact,open,open
+12/12/2018 20:42:28,Front Door,lock,unlocked,unlocked
+12/12/2018 20:42:30,Camera Driveway,motion,active,active
+12/12/2018 20:42:30,Garage Doors,contact,closed,closed
+12/12/2018 20:42:35,Front Door,lock,locked,locked
+12/12/2018 20:42:36,Front Door,lock,locked,locked
+12/12/2018 20:42:46,Front Door,lock,unlocked,unlocked
+12/12/2018 20:42:47,Front Door,lock,locked,locked
+12/12/2018 20:43:00,Camera Driveway,motion,inactive,inactive
+12/12/2018 20:55:53,zAlarmP Upper Doors,contact,open,open
+12/12/2018 20:55:57,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 20:56:04,Camera Driveway,motion,active,active
+12/12/2018 20:56:34,Camera Driveway,motion,inactive,inactive
+12/12/2018 20:57:46,zAlarmP Upper Doors,contact,open,open
+12/12/2018 20:57:49,zAlarmP Upper Doors,contact,closed,closed
+12/12/2018 21:07:54,Back Door Light,switch,off,off
+12/12/2018 21:08:25,Driveway Lights,switch,off,off
+12/12/2018 22:34:48,Front Door Light,switch,off,off
+12/12/2018 22:34:48,Front Stoop Lights,switch,off,off
+12/13/2018 0:52:14,Camera back door,motion,active,active
+12/13/2018 0:52:19,Back Door Light,switch,on,on
+12/13/2018 0:52:44,Camera back door,motion,inactive,inactive
+12/13/2018 4:48:23,Driveway Lights,switch,on,on
+12/13/2018 4:48:23,Motion Sensor Driveway,motion,active,active
+12/13/2018 4:48:54,Motion Sensor Driveway,motion,inactive,inactive
+12/13/2018 4:54:10,Camera back door,motion,active,active
+12/13/2018 4:54:40,Camera back door,motion,inactive,inactive
+12/13/2018 6:01:24,Camera back door,motion,active,active
+12/13/2018 6:01:54,Camera back door,motion,inactive,inactive
+12/13/2018 6:56:23,zAlarmP Bottom Door,contact,open,open
+12/13/2018 6:56:26,zAlarmP Bottom Door,contact,closed,closed
+12/13/2018 7:23:20,Camera back door,motion,active,active
+12/13/2018 7:23:50,Camera back door,motion,inactive,inactive
+12/13/2018 7:30:59,Back Door Light,switch,off,off
+12/13/2018 7:53:24,Driveway Lights,switch,off,off
+12/13/2018 8:50:16,zAlarmP Upper Doors,contact,open,open
+12/13/2018 8:50:22,zAlarmP Upper Doors,contact,closed,closed
+12/13/2018 8:50:39,Camera front drive,motion,active,active
+12/13/2018 8:51:09,Camera front drive,motion,inactive,inactive
+12/13/2018 8:52:34,Motion Sensor Driveway,motion,active,active
+12/13/2018 8:52:49,Back Door,lock,unlocked,unlocked
+12/13/2018 8:52:51,zAlarmP Back Door,contact,open,open
+12/13/2018 8:53:07,Motion Sensor Driveway,motion,inactive,inactive
+12/13/2018 8:53:30,zAlarmP Upper Doors,contact,open,open
+12/13/2018 8:53:37,zAlarmP Upper Doors,contact,closed,closed
+12/13/2018 8:53:39,Back Door,lock,locked,locked
+12/13/2018 8:53:39,zAlarmP Back Door,contact,closed,closed
+12/13/2018 8:53:46,Motion Sensor Driveway,motion,active,active
+12/13/2018 8:54:16,Motion Sensor Driveway,motion,inactive,inactive
+12/13/2018 8:54:41,Front Door,lock,locked,locked
+12/13/2018 8:54:45,Camera front drive,motion,active,active
+12/13/2018 8:54:56,Front Door,lock,unlocked,unlocked
+12/13/2018 8:55:11,Front Door,lock,locked,locked
+12/13/2018 8:55:15,Camera front drive,motion,inactive,inactive
+12/13/2018 8:55:21,zAlarmP Upper Doors,contact,open,open
+12/13/2018 8:55:25,zAlarmP Upper Doors,contact,closed,closed
+12/13/2018 9:10:44,Camera front drive,motion,active,active
+12/13/2018 9:11:14,Camera front drive,motion,inactive,inactive
+12/13/2018 9:12:02,Camera front drive,motion,active,active
+12/13/2018 9:12:33,Camera front drive,motion,inactive,inactive
+12/13/2018 9:16:46,Bottom Door,lock,unlocked,unlocked
+12/13/2018 9:16:49,zAlarmP Bottom Door,contact,open,open
+12/13/2018 9:17:01,zAlarmP Bottom Door,contact,closed,closed
+12/13/2018 9:17:03,Bottom Door,lock,locked,locked
