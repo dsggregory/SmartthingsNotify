@@ -1,6 +1,5 @@
-# Manage SmartThings Event Notifications
-This includes both a SmartThings Smart App that subscribes to user-defined events
-and a Web service (in Go) to store and manage the events.
+# SmartThings Event Notifications WebApp
+A Web service (in Go) to store and manage the SmartThings events.
 
 # Run
 With docker:
