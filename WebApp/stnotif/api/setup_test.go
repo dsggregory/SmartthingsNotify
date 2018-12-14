@@ -15,7 +15,7 @@ var (
 func setupTest() error {
 	f, err := stnotif.NewFixtures()
 	if err == nil {
-		s = server{config: f.Config, router: mux.NewRouter(), db: f.DbHandle}
+		s = server{appDir: "../../", config: f.Config, router: mux.NewRouter(), db: f.DbHandle}
 		s.initRoutes()
 	}
 	return err

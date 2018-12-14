@@ -9,6 +9,18 @@
  *
  *  Changelog:
  *
+ *    1.4.x (12/14/2018) dsg
+ *      - Removed methods
+            verifyWebAppUrl
+            verifyGSVersion
+            postEventsToGoogleSheets => postEventsToWebApp
+            getArchiveOptions
+
+        - Removed attributes
+            deleteExtraColumns
+            archiveType
+            googleWebAppUrl => webAppUrl
+
  *    1.4.1 (10/22/2017)
  *      -  The Google Script does NOT need to be updated.
  *      -  Added "Activity" attribute which will log device "online/offline" changes.
@@ -162,7 +174,7 @@ def aboutPage() {
 				
 			paragraph title: "Version",
 				required: false,
-				"SmartApp: ${version()}\nGoogle Script: ${gsVerActual}${gsVerExpectedMsg}"
+				"SmartApp: ${version()}\nGoogle Script: ${gsVerActual}${gsVerExpectedMsg}" // TODO fixup
 				
 			 href(name: "documentationLink",
 				 title: "View Documentation",
@@ -310,11 +322,13 @@ private getOptionsPageContent() {
 			title: "Include additional columns for short date and hour?",
 			defaultValue: false,
 			required: false
+		// TODO hmm?
 		input "deleteExtraColumns", "bool",
 			title: "Delete Extra Columns?",
 			description: "Enable this setting to increase the log size.",
 			defaultValue: true,
 			required: false
+		// TODO remove
 		input "archiveType", "enum",
 			title: "Archive Type:",
 			defaultValue: "None",
@@ -329,14 +343,20 @@ private getOptionsPageContent() {
 				range: "100..100000"
 		}
 	}
+	// TODO remove
 	section("${getWebAppName()}") {		
 		input "googleWebAppUrl", "text",
 			title: "${getWebAppName()} Url",
 			required: true
 		paragraph "The url you enter into this field needs to start with: ${webAppBaseUrl} or ${webAppBaseUrl2}"
-		paragraph "If your url does not start like that, go back and copy it from the Script Editor Publish screen in the Google Sheet."		
+		paragraph "For google sheets, if your url does not start like that, go back and copy it from the Script Editor Publish screen in the Google Sheet."
 	}
-	
+	section("${getWebAppName()}") {
+		input "webAppUrl", "text",
+			title: "${getWebAppName()} Url",
+			required: true
+	}
+
 	if (state.installed) {
 		section("OAuth Token") {
 			getPageLink("createTokenPageLink", "Generate New OAuth Token", "createTokenPage", null, state.endpoint ? "" : "The SmartApp was unable to generate an OAuth token which usually happens if you haven't gone into the IDE and enabled OAuth in this SmartApps settings.  Once OAuth is enabled, you can click this link to try again.")
@@ -466,6 +486,7 @@ def updated() {
 	}
 }
 
+// TODO remove
 private verifyWebAppUrl(url) {
 	if (!url) {
 		logDebug "The ${getWebAppName()} Url field is required"
@@ -480,6 +501,7 @@ private verifyWebAppUrl(url) {
 	}
 }
 
+// TODO remove
 // Requests the version from the Google Script and displays a warning if it's not the expected version.
 private verifyGSVersion() {
 	def actualGSVersion = ""
@@ -543,6 +565,7 @@ def logNewEvents() {
 	logDebug "SmartThings found ${String.format('%,d', eventCount)} events between ${getFormattedLocalTime(startDate.time)} and ${getFormattedLocalTime(endDate.time)}${actionMsg}"
 	
 	if (events) {
+        // TODO rename and repurpose
 		postEventsToGoogleSheets(events)
 	}
 	else {		
@@ -593,6 +616,7 @@ private getLogCatchUpFrequencySettingMS() {
 	return (minutesVal * 60 * 1000)
 }
 
+// TODO rename and repurpose
 private postEventsToGoogleSheets(events) {
 	def jsonOutput = new groovy.json.JsonOutput()
 	def jsonData = jsonOutput.toJson([
@@ -613,6 +637,7 @@ private postEventsToGoogleSheets(events) {
 	asynchttp_v1.post(processLogEventsResponse, params)
 }
 
+// TODO remove
 private getArchiveOptions() {
 	return [
 		logIsFull: (state.loggingStatus?.logIsFull ? true : false),
@@ -623,7 +648,7 @@ private getArchiveOptions() {
 
 // Google Sheets redirects the post to a temporary url so the response is usually 302 which is page moved.
 def processLogEventsResponse(response, data) {
-	if (response?.status == 302) {
+	if (response?.status == 302) { // TODO add 200 Success
 		logTrace "${getWebAppName()} Response: ${response.status}"
 	}
 	else if ( response?.errorMessage?.contains("Read timeout to script.google.com") ) {
@@ -650,6 +675,7 @@ private initializeAppEndpoint() {
 	}
 }
 
+// TODO why OATH?
 private getInitializeEndpointErrorMessage() {
 	return "This SmartApp requires OAuth so please follow these steps to enable it:\n1.  Go into the My SmartApps section of the IDE\n2. Click the pencil icon next to this SmartApp to open the properties\n3.Click the 'OAuth' link\n4. Click 'Enable OAuth in Smart App'."
 }
@@ -667,9 +693,9 @@ def api_updateLoggingStatus() {
 	def data = request.JSON
 	if (data) {
 		status.success = data.success
-		status.eventsArchived = data.eventsArchived
-		status.logIsFull = data.logIsFull
-		status.gsVersion = data.version
+		status.eventsArchived = data.eventsArchived // TODO rm
+		status.logIsFull = data.logIsFull // TODO rm
+		status.gsVersion = data.version // TODO rm
 		status.finished = new Date().time
 		status.eventsLogged = data.eventsLogged
 		status.totalEventsLogged = data.totalEventsLogged
@@ -687,6 +713,7 @@ def api_updateLoggingStatus() {
 	logLoggingStatus()
 }
 
+// TODO repurpose
 private logLoggingStatus() {
 	def status = getFormattedLoggingStatus()
 	if (status.logIsFull) {
@@ -707,6 +734,7 @@ private logLoggingStatus() {
 	logTrace "Google Script Version: ${state.loggingStatus?.gsVersion}, Total Events Logged: ${status.totalEventsLogged}, Remaining Space Available: ${status.freeSpace}"
 }
 
+// TODO repurpose
 private getFormattedLoggingStatus() {
 	def status = state.loggingStatus ?: [:]
 	return [
@@ -970,14 +998,17 @@ private getArchiveTypeOptions() {
 }
 
 
+// TODO repurpose
 private getWebAppName() {
 	return "Google Sheets Web App"
 }
 
+// TODO remove
 private getWebAppBaseUrl() {
 	return "https://script.google.com/macros/s/"
 }
 
+// TODO remove
 private getWebAppBaseUrl2() {
 	return "https://script.google.com/macros/u/"
 }

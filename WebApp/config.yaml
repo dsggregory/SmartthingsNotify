@@ -1,0 +1,11 @@
+serverPort: 8080
+debug: true
+hosts: ['127.0.0.1', '[::1]', '192.168.1.17']
+database:
+  database: smartthings
+  host: localhost
+  port: 3306
+  user: root
+  password: ''
+  socket: ''
+  driver: 'mysql'

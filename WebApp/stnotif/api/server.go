@@ -19,6 +19,7 @@ import (
 )
 
 type server struct {
+	appDir string
 	config *conf.Conf
 	router *mux.Router
 	db     *dao.DbHandle
@@ -116,7 +117,8 @@ func StartServer(config *conf.Conf) {
 		log.WithError(err).Fatalln("unable to open database")
 	}
 
-	s := &server{config: config, router: mux.NewRouter(), db: db}
+	pwd, _ := os.Getwd()
+	s := &server{appDir: pwd, config: config, router: mux.NewRouter(), db: db}
 	fmt.Println(s)
 	s.initRoutes()
 	if log.GetLevel() == log.DebugLevel {

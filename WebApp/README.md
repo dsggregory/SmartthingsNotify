@@ -2,6 +2,12 @@
 This includes both a SmartThings Smart App that subscribes to user-defined events
 and a Web service (in Go) to store and manage the events.
 
+# Run
+With docker:
+```text
+$ docker build -t stnotif .
+$ docker run -d -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' stnotif:latest
+```
 # Build
 ```text
 $ make

@@ -1,6 +1,7 @@
 <h1 id="simple-event-logger">Simple Event Logger - v1.4.1</h1>
 <p>By Kevin LaFramboise (krlaframboise)</p>
 
+```-With updates to support writing to a web service-```
 <p><img align="right" src="https://raw.githubusercontent.com/krlaframboise/Resources/master/simple-event-logger/app-SimpleEventLogger@3x.png" alt="Simple Event Logger Logo" />The Simple Event Logger is a fully customizable SmartApp that allows you to accurately log all device activity to a Google Sheets Spreadsheet.  Each event is stored on a separate row so that you have their exact time and details.</p>
 
 <p>Google Sheets has an easy to use filter feature which allows you to do things like view all events for a specific device(s), in a specified date/range and/or specific types of events like temperature.</p>

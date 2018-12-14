@@ -1,7 +1,7 @@
 all: test
 	go build
 
-vendor:: ./vendor
+vendor:
 	go mod vendor
 
 test: vendor

@@ -18,6 +18,9 @@ func TestEventsState(t *testing.T) {
 	req, err := http.NewRequest("GET", "/events/state", nil)
 	assert.Nil(err)
 
+	// we want JSON
+	req.Header["Accept"] = append(req.Header["Accept"], "application/json")
+
 	// We create a ResponseRecorder (which satisfies http.ResponseWriter) to record the response.
 	rr := httptest.NewRecorder()
 
@@ -45,6 +48,9 @@ func TestGetEvents(t *testing.T) {
 	// Create a request to pass to our handler
 	req, err := http.NewRequest("GET", "/events?since=12/08/2018+00:00:00", nil)
 	assert.Nil(err)
+
+	// we want JSON
+	req.Header["Accept"] = append(req.Header["Accept"], "application/json")
 
 	// We create a ResponseRecorder (which satisfies http.ResponseWriter) to record the response.
 	rr := httptest.NewRecorder()

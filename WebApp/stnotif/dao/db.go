@@ -175,12 +175,11 @@ func dbnameOfDSN(dsn string) (string, string) {
 
 // NewDbHandlerTest creates a test DB after dropping one that exists
 func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
-	dbname, dsn := dbnameOfDSN(conf.DbDSN)
-	conf.DbDSN = dsn
+	dbname, dsn := dbnameOfDSN(conf.DbDSN())
 
 	// open without a default database name
 	d := DbHandle{conf: conf}
-	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
+	conn, err := sql.Open(conf.DbDriver(), dsn)
 	if err != nil {
 		return nil, err
 	}
@@ -197,16 +196,16 @@ func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 
 	// close and reopen with the database name
 	d.conn.Close()
-	conf.DbDSN += dbname
+
 	return NewDbHandler(conf)
 }
 
 // NewDbHandler creates an instance of the dao
 func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 	d := DbHandle{conf: conf}
-	d.dbname, _ = dbnameOfDSN(conf.DbDSN)
+	d.dbname, _ = dbnameOfDSN(conf.DbDSN())
 
-	conn, err := sql.Open(conf.DbDriver, conf.DbDSN)
+	conn, err := sql.Open(conf.DbDriver(), conf.DbDSN())
 	if err != nil {
 		return nil, err
 	}

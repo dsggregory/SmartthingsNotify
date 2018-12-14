@@ -7,6 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
+	"path"
 	"time"
 )
 
@@ -40,7 +41,7 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 		var events []dao.NotifRec
 		events, err = s.db.GetEvents(t)
 		if err == nil {
-			s.respondWithEvents(events, "views/events.html", w, r)
+			s.respondWithEvents(events, path.Join(s.appDir, "views/events.html"), w, r)
 		}
 	}
 	if err != nil {
@@ -55,7 +56,7 @@ func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
 	var events []dao.NotifRec
 	events, err := s.db.GetLastByDevice()
 	if err == nil {
-		s.respondWithEvents(events, "views/state.html", w, r)
+		s.respondWithEvents(events, path.Join(s.appDir, "views/state.html"), w, r)
 	} else {
 		log.WithError(err).Error("cannot get events")
 		w.WriteHeader(http.StatusInternalServerError)

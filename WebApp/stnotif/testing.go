@@ -60,7 +60,10 @@ func (tf *TestFixtures) loadFixtures(fpath string) {
 // NewFixtures creates and load test fixtures
 func NewFixtures() (*TestFixtures, error) {
 	tf := TestFixtures{}
-	tf.Config = &conf.Conf{DbDriver: "mysql", DbDSN: "root@tcp(localhost)/_test_st"}
+	var c conf.Conf
+	tf.Config = c.GetConf("../../config.yaml")
+	tf.Config.Database.Database = "_test_st"
+
 	dbh, err := dao.NewDbHandlerTest(tf.Config)
 	if err == nil {
 		tf.DbHandle = dbh
