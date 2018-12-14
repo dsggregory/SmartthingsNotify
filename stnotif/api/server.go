@@ -56,7 +56,8 @@ func (s *server) logRoutes() {
 // middleware to record the response status
 type statusRecorder struct {
 	http.ResponseWriter
-	status int
+	startTime time.Time
+	status    int
 }
 
 func (rec *statusRecorder) WriteHeader(code int) {
@@ -93,7 +94,7 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 			w.WriteHeader(403)
 		} else {
 			// Initialize the status to 200 in case WriteHeader is not called
-			rec := statusRecorder{w, 200}
+			rec := statusRecorder{w, time.Now(), 200}
 			handler.ServeHTTP(&rec, r)
 			log.WithFields(log.Fields{
 				"RemoteAddr": r.RemoteAddr,
@@ -101,6 +102,7 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 				"URL":        r.URL,
 				"Status":     rec.status,
 				"state":      "complete",
+				"duration":   time.Now().Sub(rec.startTime),
 			}).Info()
 		}
 		// have to wrap the ResponseWriter if we want to log the status

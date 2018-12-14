@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stylesheets/app.css"/>
+</head>
+
+<body>
+
+<table>
+    <tr><th>Time</th><th>Device</th><th>Event</th><th>Value</th><th>Description</th></tr>
+{{range .Items }}
+    <tr>
+        <td>{{ .EventTime }}</td>
+        <td>{{ .Device }}</td>
+        <td>{{ .Event }}</td>
+        <td>{{ .Value }}</td>
+        <td>{{ .Description }}</td>
+    </tr>
+{{else}}
+    <tr>
+        <strong>
+            no rows
+        </strong>
+    </tr>
+{{end}}
+</table>
+
+</body></html>
