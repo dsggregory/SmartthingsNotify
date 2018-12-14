@@ -28,6 +28,11 @@ type NotifRec struct {
 	Description string
 }
 
+// EventTime returns the string version of the NotifyRec.EvTime
+func (n *NotifRec) EventTime() string {
+	return time.Unix(n.EvTime, 0).UTC().Format("Mon, 2 Jan 15:04:05")
+}
+
 // DbHandle is a handle to the database
 type DbHandle struct {
 	conf    *conf.Conf
@@ -96,7 +101,7 @@ func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
 
 // GetLastByDevice returns the current state of all known devices
 func (d *DbHandle) GetLastByDevice() ([]NotifRec, error) {
-	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications group by device_name)")
+	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications group by device_name) order by device_name")
 	defer rows.Close()
 	if err == nil {
 		return d.notificationsFromQuery(rows)
@@ -146,7 +151,7 @@ func dbnameOfDSN(dsn string) (string, string) {
 	return dbname, dsn
 }
 
-// NewDbHandlerTest creates a test DB
+// NewDbHandlerTest creates a test DB after dropping one that exists
 func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 	dbname, dsn := dbnameOfDSN(conf.DbDSN)
 	conf.DbDSN = dsn

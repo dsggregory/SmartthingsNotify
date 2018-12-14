@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"html/template"
 	"io/ioutil"
 	"net/http"
 
@@ -22,13 +23,13 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 		if err == nil {
 			err = s.db.AddEvent(n)
 			if err == nil {
-				w.WriteHeader(201)
+				w.WriteHeader(http.StatusCreated)
 			}
 		}
 	}
 	if err != nil {
 		log.WithError(err).Error("cannot add event")
-		w.WriteHeader(500)
+		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
 
@@ -49,14 +50,14 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 			}
 			if err == nil {
 				w.Header().Set("Content-Type", "application/json")
-				w.WriteHeader(200)
+				w.WriteHeader(http.StatusOK)
 				w.Write(j)
 			}
 		}
 	}
 	if err != nil {
 		log.WithError(err).WithField("since", vars["since"]).Error("cannot get events")
-		w.WriteHeader(500)
+		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
 
@@ -66,22 +67,27 @@ func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
 	var events []dao.NotifRec
 	events, err := s.db.GetLastByDevice()
 	if err == nil {
-		var j []byte
-		if len(events) > 0 {
-			j, err = json.Marshal(events)
-		} else {
-			j = []byte("{}")
-		}
+		status := http.StatusInternalServerError
+		t, err := template.ParseFiles("views/state.html")
 		if err == nil {
-			w.Header().Set("Content-Type", "application/json")
-			w.WriteHeader(200)
-			w.Write(j)
-			//log.Info(string(j))
+			data := struct {
+				Items []dao.NotifRec
+			}{
+				Items: events,
+			}
+			err = t.Execute(w, data)
+			if err == nil {
+				status = http.StatusOK
+			} else {
+				log.WithError(err).Error()
+			}
+		} else {
+			log.WithError(err).Error()
 		}
-	}
-	if err != nil {
+		w.WriteHeader(status)
+	} else {
 		log.WithError(err).Error("cannot get events")
-		w.WriteHeader(500)
+		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
 
@@ -100,4 +106,5 @@ func (s *server) initRoutes() {
 	s.router.HandleFunc("/events/state", s.getEventsState).
 		Methods("GET").
 		Name("getEventsState")
+	s.router.PathPrefix("/").Handler(http.FileServer(http.Dir("./assets/")))
 }
