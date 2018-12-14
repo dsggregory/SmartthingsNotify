@@ -101,6 +101,8 @@ func (s *server) initRoutes() {
 	s.router.HandleFunc("/events/state", s.getEventsState).
 		Methods("GET").
 		Name("getEventsState")
+	s.router.HandleFunc("/", s.getEventsState).
+		Methods("GET")
 	s.router.HandleFunc("/events/device/{device}", s.getDeviceEvents).
 		Methods("GET").
 		Queries("since", "{since}").

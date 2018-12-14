@@ -1,6 +1,6 @@
 serverPort: 8080
 debug: true
-hosts: ['127.0.0.1', '[::1]']
+hosts: ['127.0.0.1', '[::1]', '192.168.1.17']
 dbDriver: 'mysql'
 # DbDSN is the go-sql connection string for the selected database engine.
 # Ex. (for mysql) "user:passwd@tcp(host:port)/database?options"
