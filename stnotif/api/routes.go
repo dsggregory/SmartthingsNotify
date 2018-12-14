@@ -4,11 +4,10 @@ import (
 	"code.dsg.com/smartthings_notif/stnotif/dao"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"html/template"
+	log "github.com/sirupsen/logrus"
 	"io/ioutil"
 	"net/http"
-
-	log "github.com/sirupsen/logrus"
+	"time"
 )
 
 // Store an event notification record.
@@ -32,52 +31,6 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func requestAccepts(r *http.Request, mime string) bool {
-	accepts := r.Header["Accept"]
-	for _, n := range accepts {
-		if n == mime {
-			return true
-		}
-	}
-	return false
-}
-
-// Respond with an array of events in JSON or by using the view specified by templatePath for HTML.
-func respondWithEvents(events []dao.NotifRec, templatePath string, w http.ResponseWriter, r *http.Request) {
-	if requestAccepts(r, "application/json") {
-		var j []byte
-		var err error
-		if len(events) > 0 {
-			j, err = json.Marshal(events)
-		} else {
-			j = []byte("{}")
-		}
-		if err == nil {
-			w.Header().Set("Content-Type", "application/json")
-			w.Write(j)
-		} else {
-			w.WriteHeader(http.StatusInternalServerError)
-		}
-	} else {
-		t, err := template.ParseFiles(templatePath)
-		if err == nil {
-			data := struct {
-				Items []dao.NotifRec
-			}{
-				Items: events,
-			}
-			err = t.Execute(w, data)
-			if err != nil {
-				w.WriteHeader(http.StatusInternalServerError)
-				log.WithError(err).Error()
-			}
-		} else {
-			w.WriteHeader(http.StatusInternalServerError)
-			log.WithError(err).Error()
-		}
-	}
-}
-
 // Get events since some time.
 // GET /events?since={mm/dd/yy+HH:MM:SS}
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
@@ -87,7 +40,7 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 		var events []dao.NotifRec
 		events, err = s.db.GetEvents(t)
 		if err == nil {
-			respondWithEvents(events, "views/events.html", w, r)
+			s.respondWithEvents(events, "views/events.html", w, r)
 		}
 	}
 	if err != nil {
@@ -102,17 +55,41 @@ func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
 	var events []dao.NotifRec
 	events, err := s.db.GetLastByDevice()
 	if err == nil {
-		respondWithEvents(events, "views/state.html", w, r)
+		s.respondWithEvents(events, "views/state.html", w, r)
 	} else {
 		log.WithError(err).Error("cannot get events")
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
 
+func (s *server) getDeviceEvents(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	var t time.Time
+	var err error
+	since := vars["since"] // optional
+	if len(since) == 0 {
+		since = "01/01/1970 00:00:00"
+	}
+	t, err = dao.SinceFormatToTime(since)
+	if err == nil {
+		var events []dao.NotifRec
+		events, err = s.db.GetDeviceEvents(vars["device"], &t)
+		if err == nil {
+			s.respondWithEvents(events, "views/events.html", w, r)
+		}
+	}
+	if err != nil {
+		log.WithError(err).WithField("since", vars["since"]).Error("cannot get events")
+		w.WriteHeader(http.StatusInternalServerError)
+	}
+}
+
 // create the routes we will support
 func (s *server) initRoutes() {
-	/* With named routes, other code may lookup the Path
-	   url, err := r.Get(route_name).URL(param_name, param_value, ...)
+	/* Notes on Gorilla MUX:
+		o With named routes, other code may lookup the Path
+	   		url, err := r.Get(route_name).URL(param_name, param_value, ...)
+		o All params are required to match - this includes query (?.*) params that are defined for the route
 	*/
 	s.router.HandleFunc("/event", s.addEvent).
 		Methods("POST").
@@ -124,5 +101,9 @@ func (s *server) initRoutes() {
 	s.router.HandleFunc("/events/state", s.getEventsState).
 		Methods("GET").
 		Name("getEventsState")
+	s.router.HandleFunc("/events/device/{device}", s.getDeviceEvents).
+		Methods("GET").
+		Queries("since", "{since}").
+		Name("getDeviceEvents")
 	s.router.PathPrefix("/").Handler(http.FileServer(http.Dir("./assets/")))
 }

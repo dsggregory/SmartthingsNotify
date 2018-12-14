@@ -35,11 +35,12 @@ func (n *NotifRec) EventTime() string {
 
 // DbHandle is a handle to the database
 type DbHandle struct {
-	conf    *conf.Conf
-	dbname  string
-	conn    *sql.DB
-	addStmt *sql.Stmt
-	getStmt *sql.Stmt
+	conf          *conf.Conf
+	dbname        string
+	conn          *sql.DB
+	addStmt       *sql.Stmt
+	getStmt       *sql.Stmt
+	getDeviceStmt *sql.Stmt
 }
 
 // UnixToMysqlTime converts time_t to YYYY-MM-DD hh:mm:ss
@@ -99,6 +100,27 @@ func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
 	return nil, err
 }
 
+// GetDeviceEvents returns an array of events for the device since some time or epoch if nil
+func (d *DbHandle) GetDeviceEvents(device string, since *time.Time) ([]NotifRec, error) {
+	var tsince int64
+	if since == nil {
+		tsince = 0
+	} else {
+		tsince = since.Unix()
+	}
+	log.WithFields(log.Fields{
+		"device":   device,
+		"since_t":  tsince,
+		"since_tm": since,
+	}).Debug()
+	rows, err := d.getDeviceStmt.Query(tsince, device)
+	defer rows.Close()
+	if err == nil {
+		return d.notificationsFromQuery(rows)
+	}
+	return nil, err
+}
+
 // GetLastByDevice returns the current state of all known devices
 func (d *DbHandle) GetLastByDevice() ([]NotifRec, error) {
 	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications group by device_name) order by device_name")
@@ -125,7 +147,7 @@ time bigint unsigned,
 event varchar(64),
 value varchar(64),
 description varchar(128),
-KEY (time)
+KEY (time, device_name)
 ) ENGINE=INNODB`
 	_, err = d.conn.Exec(q)
 	if err != nil {
@@ -192,12 +214,17 @@ func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 
 	d.getStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=?", d.dbname))
 	if err != nil {
-		log.WithError(err).Fatal("can't prepare GET statement")
+		log.WithError(err).Fatal("can't prepare getEvents statement")
 	}
 
 	d.addStmt, err = conn.Prepare(fmt.Sprintf("INSERT INTO %s.notifications SET id=0, device_name=?, time=?, event=?, value=?, description=?", d.dbname))
 	if err != nil {
-		log.WithError(err).Fatal("can't prepare ADD statement")
+		log.WithError(err).Fatal("can't prepare addEvent statement")
+	}
+
+	d.getDeviceStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=? AND device_name=?", d.dbname))
+	if err != nil {
+		log.WithError(err).Fatal("can't prepare getDeviceEvents statement")
 	}
 
 	return &d, nil
