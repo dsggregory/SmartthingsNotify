@@ -16,6 +16,7 @@ $ docker build -t stnotif .
 ```
 
 Determine from where connections should be allowed to the web app. Certainly the SmartThings servers, plus from where you may be browsing. Use these hosts as comma-separated values of the `ALLOW_HOSTS` environment variable that you pass to docker when you run the service. 
+Setting `ALLOW_HOSTS` to "**any**" will allow any host to connect.
 ```text
 $ docker run -d -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' stnotif:latest
 ```
