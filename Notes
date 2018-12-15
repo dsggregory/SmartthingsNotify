@@ -41,3 +41,10 @@ WebApp logs
 time="2018-12-15T17:58:45Z" level=info msg="calling gs postback" pbdata="{true false false Version 01.03.00 1544896725760 34 34 unlimited }" postback-url="https://graph.api.smartthings.com:443/api/token/a072e408-e085-4566-9cdb-00f61ede02a2/smartapps/installations/41eb83c7-b992-4695-a710-f204edd4e135/update-logging-status"
 time="2018-12-15T17:58:45Z" level=debug msg="gs postback success" post="{\"Success\":true,\"EventsArchived\":false,\"LogIsFull\":false,\"GsVersion\":\"Version 01.03.00\",\"Finished\":1544896725760,\"EventsLogged\":34,\"TotalEventsLogged\":34,\"FreeSpace\":\"unlimited\",\"error\":\"\"}" response=
 time="2018-12-15T17:58:45Z" level=info Method=POST RemoteAddr="54.83.153.160:57994" Status=302 URL=/gs duration=234.869748ms state=complete
+
+-------
+
+GET /login?apiKey=xxx - apiKey==conf.apiKey? don't check allowed host
+mac it and set login cookie
+redirect to /
+in future, auth is allowed host or has login cookie

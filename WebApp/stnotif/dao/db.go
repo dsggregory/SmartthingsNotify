@@ -228,7 +228,7 @@ func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 	}
 	d.conn = conn
 
-	d.getStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=?", d.dbname))
+	d.getStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=? ORDER BY time DESC", d.dbname))
 	if err != nil {
 		log.WithError(err).Fatal("can't prepare getEvents statement")
 	}
@@ -238,7 +238,7 @@ func NewDbHandler(conf *conf.Conf) (*DbHandle, error) {
 		log.WithError(err).Fatal("can't prepare addEvent statement")
 	}
 
-	d.getDeviceStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=? AND device_name=?", d.dbname))
+	d.getDeviceStmt, err = conn.Prepare(fmt.Sprintf("SELECT id, device_name, time, event, value, description FROM %s.notifications WHERE time>=? AND device_name=? ORDER BY time DESC", d.dbname))
 	if err != nil {
 		log.WithError(err).Fatal("can't prepare getDeviceEvents statement")
 	}
