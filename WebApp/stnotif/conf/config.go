@@ -26,8 +26,11 @@ type Conf struct {
 	Database   DbConf
 }
 
-// AllowsHost checks host against to determine if a peer matches a configured host.
+// AllowsHost checks peer to determine if it matches a configured host. Returns true if Hosts are not configured.
 func (c *Conf) AllowsHost(host string) bool {
+	if c.Hosts == nil || len(c.Hosts) == 0 {
+		return true
+	}
 	for _, a := range c.Hosts {
 		if a == host {
 			return true
