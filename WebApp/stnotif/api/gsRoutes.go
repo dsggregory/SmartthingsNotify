@@ -107,7 +107,7 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 			w.WriteHeader(http.StatusFound)
 			pb.Success = true
 		} else {
-			log.WithField("body", body).Debug("can't parse body")
+			log.WithField("body", string(body)).Debug("can't parse body")
 		}
 	}
 	if err != nil {
@@ -129,7 +129,7 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 			if err == nil {
 				body, err := ioutil.ReadAll(resp.Body)
 				if err == nil {
-					log.WithField("response", string(body)).WithField("post", pbdata).Debug("gs postback success")
+					log.WithField("response", string(body)).WithField("post", string(pbdata)).Debug("gs postback success")
 				} else {
 					log.WithError(err).Error("gs postback read body")
 				}
