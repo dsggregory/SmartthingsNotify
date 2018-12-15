@@ -36,8 +36,8 @@ type archiveOptions struct {
 type postRequestData struct {
 	PostBackUrl        string
 	ArchiveOptions     archiveOptions
-	LogDesc            string
-	LogReporting       string
+	LogDesc            bool
+	LogReporting       bool
 	DeleteExtraColumns bool
 	Events             []gsPostEvent
 }

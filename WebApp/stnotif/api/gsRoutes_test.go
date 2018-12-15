@@ -49,9 +49,9 @@ func TestGsPost(t *testing.T) {
 	pd := postRequestData{
 		PostBackUrl:        "", //"https://postback.domain.com",
 		ArchiveOptions:     archiveOptions{LogIsFull: false, Type: "type", Interval: 0},
-		LogDesc:            "some events",
-		LogReporting:       "1",
-		DeleteExtraColumns: false,
+		LogDesc:            true,
+		LogReporting:       false,
+		DeleteExtraColumns: true,
 		Events:             events,
 	}
 	j, err := json.Marshal(&pd)
