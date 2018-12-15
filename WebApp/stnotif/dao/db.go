@@ -200,7 +200,7 @@ func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 	d.conn = conn
 
 	// drop the existing test database
-	_, err = d.conn.Exec("DROP DATABASE " + dbname)
+	_, err = d.conn.Exec("DROP DATABASE IF EXISTS " + dbname)
 	if err != nil {
 		panic(err)
 	}
