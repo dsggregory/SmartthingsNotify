@@ -129,7 +129,7 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 			if err == nil {
 				body, err := ioutil.ReadAll(resp.Body)
 				if err == nil {
-					log.WithField("response", string(body)).Debug("gs postback success")
+					log.WithField("response", string(body)).WithField("post", pbdata).Debug("gs postback success")
 				} else {
 					log.WithError(err).Error("gs postback read body")
 				}
