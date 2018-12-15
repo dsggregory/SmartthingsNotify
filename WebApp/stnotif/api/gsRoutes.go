@@ -43,15 +43,15 @@ type postRequestData struct {
 }
 
 type postbackData struct {
-	Success           bool
-	EventsArchived    bool   // always false
-	LogIsFull         bool   // always false
-	GsVersion         string // GsVersion
-	Finished          int64  // time in millisec
-	EventsLogged      int    // count
-	TotalEventsLogged int    // count
-	FreeSpace         string // "unlimited"
-	Error             string `json:"error",omitempty` // always empty
+	Success           bool   `json:"success"`
+	EventsArchived    bool   `json:"eventsArchived"`    // always false
+	LogIsFull         bool   `json:"logIsFull"`         // always false
+	GsVersion         string `json:"gsVersion"`         // GsVersion
+	Finished          int64  `json:"finished"`          // time in millisec
+	EventsLogged      int    `json:"eventsLogged"`      // count
+	TotalEventsLogged int    `json:"totalEventsLogged"` // count
+	FreeSpace         string `json:"freeSpace"`         // "unlimited"
+	Error             string `json:"error",omitempty`   // always empty
 }
 
 // POST https://script.google.com/macros/s/{key}/GG/exec
