@@ -106,6 +106,8 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 			}
 			w.WriteHeader(http.StatusFound)
 			pb.Success = true
+		} else {
+			log.WithField("body", body).Debug("can't parse body")
 		}
 	}
 	if err != nil {

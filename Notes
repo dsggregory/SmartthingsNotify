@@ -1,0 +1,11 @@
+time="2018-12-15T16:14:16Z" level=info Method=GET RemoteAddr="54.83.153.25:38968" URL=/gs state=begin
+time="2018-12-15T16:14:16Z" level=info Method=GET RemoteAddr="54.83.153.25:38968" Status=200 URL=/gs duration="34.672µs" state=complete
+time="2018-12-15T16:14:26Z" level=info Method=POST RemoteAddr="54.83.150.101:45233" URL=/gs state=begin
+time="2018-12-15T16:14:26Z" level=error msg="cannot add event" error="json: cannot unmarshal object into Go struct field postRequestData.ArchiveOptions of type string"
+time="2018-12-15T16:14:26Z" level=info msg="calling gs postback" pbdata="{false false false Version 01.03.00 1544890466960 0 0 unlimited service error}" postback-url="https://graph.api.smartthings.com:443/api/token/a072e408-e085-4566-9cdb-00f61ede02a2/smartapps/installations/41eb83c7-b992-4695-a710-f204edd4e135/update-logging-status"
+time="2018-12-15T16:14:27Z" level=debug msg="gs postback success" response=
+time="2018-12-15T16:14:27Z" level=info Method=POST RemoteAddr="54.83.150.101:45233" Status=500 URL=/gs duration=262.230028ms state=complete
+
+
+
+log debug json body
