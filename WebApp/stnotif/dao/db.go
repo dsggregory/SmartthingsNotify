@@ -3,6 +3,7 @@ package dao
 import (
 	"database/sql"
 	"fmt"
+	"strconv"
 	"strings"
 	"time"
 
@@ -157,6 +158,19 @@ KEY (time, device_name)
 	return nil
 }
 
+// GetCount gets count of rows in notifications
+func (d *DbHandle) GetCount() int {
+	count := 0
+	var col string
+	row := d.conn.QueryRow("SELECT count(*) FROM notifications")
+	err := row.Scan(&col)
+	if err == nil {
+		count, _ = strconv.Atoi(col)
+	}
+
+	return count
+}
+
 // Return the database name of the Data Source Name
 func dbnameOfDSN(dsn string) (string, string) {
 	var dbname string
@@ -186,7 +200,10 @@ func NewDbHandlerTest(conf *conf.Conf) (*DbHandle, error) {
 	d.conn = conn
 
 	// drop the existing test database
-	_, _ = d.conn.Exec("DROP DATABASE " + dbname)
+	_, err = d.conn.Exec("DROP DATABASE " + dbname)
+	if err != nil {
+		panic(err)
+	}
 
 	// create the test database
 	err = d.CreateDatabase(dbname)

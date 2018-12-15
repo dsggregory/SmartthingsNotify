@@ -108,5 +108,11 @@ func (s *server) initRoutes() {
 		Methods("GET").
 		Queries("since", "{since}").
 		Name("getDeviceEvents")
+
+	// Google Sheets faux routes for use by the SmartApp
+	s.router.HandleFunc("/gs", s.googleSheetsEndpointGet).Methods("GET")
+	s.router.HandleFunc("/gs", s.googleSheetsEndpointPost).Methods("POST")
+
+	// default for static files (CSS, images, et.al.)
 	s.router.PathPrefix("/").Handler(http.FileServer(http.Dir("./assets/")))
 }
