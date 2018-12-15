@@ -105,8 +105,6 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 				aerr := s.db.AddEvent(n)
 				if aerr != nil {
 					log.WithError(aerr).WithField("input-event", ir).Error("AddEvent failed")
-				} else {
-					pb.TotalEventsLogged++
 				}
 			}
 			w.WriteHeader(http.StatusFound)
@@ -124,6 +122,7 @@ func (s *server) googleSheetsEndpointPost(w http.ResponseWriter, r *http.Request
 	// We have to call back into the SmartApp to tell it how we did or it may continue to send
 	// us the same data or it may just log it.
 	pb.Finished = time.Now().UnixNano() / int64(time.Millisecond)
+	pb.TotalEventsLogged = s.db.GetCount()
 	if len(rd.PostBackUrl) > 0 {
 		pbdata, err := json.Marshal(&pb)
 		if err == nil {
