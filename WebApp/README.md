@@ -20,7 +20,8 @@ plus from where you may be browsing. Use these hosts as comma-separated values o
 that you pass to docker when you run the service. 
 Setting `ALLOW_HOSTS` supports globbing (ex. "128.15.*") so you must escape square brackets `[]` in IPv6 addresses.
 ```text
-$ docker run -d -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' stnotif:latest
+$ docker run -d --name stnotif -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' \
+    --mount 'source=stnotif-mysql,target=/var/lib/mysql' stnotif:latest
 ```
 
 You can browse to `http://{dockerhost}:8080/`.

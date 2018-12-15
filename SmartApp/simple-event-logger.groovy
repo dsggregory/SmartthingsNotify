@@ -351,11 +351,6 @@ private getOptionsPageContent() {
 		paragraph "The url you enter into this field needs to start with: ${webAppBaseUrl} or ${webAppBaseUrl2}"
 		paragraph "For google sheets, if your url does not start like that, go back and copy it from the Script Editor Publish screen in the Google Sheet."
 	}
-	section("${getWebAppName()}") {
-		input "webAppUrl", "text",
-			title: "${getWebAppName()} Url",
-			required: true
-	}
 
 	if (state.installed) {
 		section("OAuth Token") {
@@ -492,13 +487,15 @@ private verifyWebAppUrl(url) {
 		logDebug "The ${getWebAppName()} Url field is required"
 		return false
 	}
+	return true	// DSG: support my web service
+    /**** DSG: removed to support my web service
 	else if ("$url"?.toLowerCase()?.startsWith(webAppBaseUrl) || "$url"?.toLowerCase()?.startsWith(webAppBaseUrl2)) {
 		return true
 	}
 	else {		
 		logWarn "The ${webAppName} Url is not valid.  Go back and copy the url from the Google Sheets Script Editor Publish page."
 		return false
-	}
+	}****/
 }
 
 // TODO remove

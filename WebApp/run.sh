@@ -1,5 +1,6 @@
 #!/bin/sh
 
+set -x
 cd `dirname $0`
 
 (cd '/usr' ; /usr/bin/mysqld_safe --datadir=${DB_DATA_PATH} --nowatch)
