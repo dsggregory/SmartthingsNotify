@@ -32,7 +32,7 @@ func TestGsGet(t *testing.T) {
 	assert.Equal(http.StatusOK, rr.Code)
 
 	// Check the response body is what we expect.
-	assert.Equal(rr.Body.String(), "Version 01.03.00")
+	assert.Equal(rr.Body.String(), GsVersion)
 
 }
 
@@ -47,7 +47,7 @@ func TestGsPost(t *testing.T) {
 		gsPostEvent{"1/1/2018 00:00:00", "Dev1", "activate", "on", "on"},
 	}
 	pd := postRequestData{
-		PostBackUrl:        "https://postback.domain.com",
+		PostBackUrl:        "", //"https://postback.domain.com",
 		ArchiveOptions:     "aopts",
 		LogDesc:            "some events",
 		LogReporting:       "1",

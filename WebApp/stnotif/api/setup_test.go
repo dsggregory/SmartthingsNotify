@@ -14,6 +14,7 @@ var (
 
 func setupTest() error {
 	f, err := stnotif.NewFixtures()
+	//logrus.SetLevel(logrus.DebugLevel)
 	if err == nil {
 		s = server{appDir: "../../", config: f.Config, router: mux.NewRouter(), db: f.DbHandle}
 		s.initRoutes()
