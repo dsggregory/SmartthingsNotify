@@ -18,11 +18,7 @@ while [ ! -e /run/mysqld/mysqld.sock ] ; do
 done
 
 if [ -n "$ALLOW_HOSTS" ]; then
-    if [ "$ALLOW_HOSTS" == "any" ]; then
-        sed -i "s|hosts:.*|hosts: []|g" ./config.yaml
-    else
-        sed -i "s|hosts:.*|hosts: [$ALLOW_HOSTS]|g" ./config.yaml
-    fi
+    sed -i "s|allowedHosts:.*|allowedHosts: [$ALLOW_HOSTS]|g" ./config.yaml
 fi
 
 ./smartthings_notif

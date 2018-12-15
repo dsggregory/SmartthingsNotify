@@ -12,8 +12,8 @@ var (
 
 func TestMain(m *testing.M) {
 	c = Conf{
-		Database: DbConf{Database: "db", User: "user", Password: "pass", Host: "host", Port: 3306, Driver: "driver", Socket: "sock"},
-		Hosts:    []string{"foo.domain.com", "127.0.0.1"},
+		Database:     DbConf{Database: "db", User: "user", Password: "pass", Host: "host", Port: 3306, Driver: "driver", Socket: "sock"},
+		AllowedHosts: []string{"foo.domain.com", "127.0.0.1", "192.*", "128.100.*"},
 	}
 
 	os.Exit(m.Run())
@@ -25,8 +25,11 @@ func TestConf_AllowsHost(t *testing.T) {
 	assert.True(c.AllowsHost("foo.domain.com"))
 	assert.True(c.AllowsHost("127.0.0.1"))
 	assert.False(c.AllowsHost("localhost"))
+	assert.True(c.AllowsHost("192.1.1.1"))
+	assert.True(c.AllowsHost("128.100.1.1"))
+	assert.False(c.AllowsHost("128.101.1.1"))
 
-	c.Hosts = []string{}
+	c.AllowedHosts = []string{}
 	assert.True(c.AllowsHost("any.domain.com"), "should allow any peer when not restricted")
 }
 

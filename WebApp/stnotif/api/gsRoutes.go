@@ -28,12 +28,17 @@ type gsPostEvent struct {
 	Value  string
 	Desc   string
 }
+type archiveOptions struct {
+	LogIsFull bool
+	Type      string
+	Interval  int64
+}
 type postRequestData struct {
 	PostBackUrl        string
-	ArchiveOptions     string
+	ArchiveOptions     archiveOptions
 	LogDesc            string
 	LogReporting       string
-	DeleteExtraColumns string
+	DeleteExtraColumns bool
 	Events             []gsPostEvent
 }
 

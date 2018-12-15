@@ -15,8 +15,10 @@ First, install Docker on the destination host where you want the web service to 
 $ docker build -t stnotif .
 ```
 
-Determine from where connections should be allowed to the web app. Certainly the SmartThings servers, plus from where you may be browsing. Use these hosts as comma-separated values of the `ALLOW_HOSTS` environment variable that you pass to docker when you run the service. 
-Setting `ALLOW_HOSTS` to "**any**" will allow any host to connect.
+Determine from where connections should be allowed to the web app. Certainly the SmartThings servers, 
+plus from where you may be browsing. Use these hosts as comma-separated values of the `ALLOW_HOSTS` environment variable 
+that you pass to docker when you run the service. 
+Setting `ALLOW_HOSTS` supports globbing (ex. "128.15.*") so you must escape square brackets `[]` in IPv6 addresses.
 ```text
 $ docker run -d -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' stnotif:latest
 ```

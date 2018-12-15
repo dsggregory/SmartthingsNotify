@@ -2,10 +2,10 @@ package conf
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-
+	"github.com/gobwas/glob"
+	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v2"
+	"io/ioutil"
 )
 
 type DbConf struct {
@@ -20,19 +20,33 @@ type DbConf struct {
 
 // Conf an instantiated configuration
 type Conf struct {
-	ServerPort int      `yaml:"serverPort"`
-	Debug      bool     `yaml:"debug"`
-	Hosts      []string `yaml:"hosts"`
-	Database   DbConf
+	ServerPort   int      `yaml:"serverPort"`
+	Debug        bool     `yaml:"debug"`
+	AllowedHosts []string `yaml:"allowedHosts"`
+	globHosts    []glob.Glob
+	Database     DbConf
 }
 
-// AllowsHost checks peer to determine if it matches a configured host. Returns true if Hosts are not configured.
+func (c *Conf) hostsCompile() {
+	if len(c.AllowedHosts) != len(c.globHosts) {
+		for _, a := range c.AllowedHosts {
+			g, err := glob.Compile(a)
+			if err != nil {
+				log.WithError(err).WithField("expr", a).Fatal("can't compile allowed host glob")
+			}
+			c.globHosts = append(c.globHosts, g)
+		}
+	}
+}
+
+// AllowsHost checks peer to determine if it matches a configured host. Returns true if AllowedHosts are not configured.
 func (c *Conf) AllowsHost(host string) bool {
-	if c.Hosts == nil || len(c.Hosts) == 0 {
+	if c.AllowedHosts == nil || len(c.AllowedHosts) == 0 {
 		return true
 	}
-	for _, a := range c.Hosts {
-		if a == host {
+	c.hostsCompile()
+	for _, g := range c.globHosts {
+		if g.Match(host) {
 			return true
 		}
 	}
