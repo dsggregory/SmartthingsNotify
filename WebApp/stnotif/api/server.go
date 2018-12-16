@@ -88,11 +88,15 @@ func (s *server) wrapRequest(handler http.Handler) http.Handler {
 			}
 		}
 		if !s.config.AllowsHost(rhost) {
+			// Keep the bots from knowing this is an http server by closing without an http response.
+			// net/http will catch the panic and close the connection to the client without sending anything.
+			// Calling panic(ErrAbortHandler) keeps net/http from logging the stacktrace.
 			log.WithFields(log.Fields{
 				"RemoteAddr": r.RemoteAddr,
 			}).
-				Error("refusing RemoteAddr")
-			w.WriteHeader(403)
+				Error("silently refusing RemoteAddr with an explicit close and no response")
+			panic(http.ErrAbortHandler)
+			//w.WriteHeader(403)
 		} else {
 			// Initialize the status to 200 in case WriteHeader is not called
 			rec := statusRecorder{w, time.Now(), 200}
