@@ -52,7 +52,7 @@ func (s *server) respondWithEvents(events []dao.NotifRec, templatePath string, w
 		}
 		t, err := template.New(path.Base(templatePath)).Funcs(fmap).ParseFiles(templatePath)
 		if err == nil {
-			all, _ := s.router.Get("getEvents").URL("since", "01/01/1970 00:00:00")
+			eventsUrl, _ := s.router.Get("getEvents").URL()
 			data := struct {
 				Events        []dao.NotifRec
 				Server        *server
@@ -60,7 +60,7 @@ func (s *server) respondWithEvents(events []dao.NotifRec, templatePath string, w
 			}{
 				Events:        events,
 				Server:        s,
-				GetEventsHref: all.String(),
+				GetEventsHref: eventsUrl.String(),
 			}
 			err = t.Execute(w, data)
 			if err != nil {

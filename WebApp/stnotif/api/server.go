@@ -119,7 +119,6 @@ func StartServer(config *conf.Conf) {
 
 	pwd, _ := os.Getwd()
 	s := &server{appDir: pwd, config: config, router: mux.NewRouter(), db: db}
-	fmt.Println(s)
 	s.initRoutes()
 	if log.GetLevel() == log.DebugLevel {
 		s.logRoutes()

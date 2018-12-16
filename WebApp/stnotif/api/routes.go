@@ -33,7 +33,7 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 }
 
 // Get events since some time.
-// GET /events?since={mm/dd/yy+HH:MM:SS}
+// GET /events?since={mm/dd/yy+HH:MM:SS | duration}
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	t, err := dao.SinceFormatToTime(vars["since"])
@@ -98,6 +98,9 @@ func (s *server) initRoutes() {
 	s.router.HandleFunc("/events", s.getEvents).
 		Methods("GET").
 		Queries("since", "{since}").
+		Name("getEventsSince")
+	s.router.HandleFunc("/events", s.getEvents).
+		Methods("GET").
 		Name("getEvents")
 	s.router.HandleFunc("/events/state", s.getEventsState).
 		Methods("GET").

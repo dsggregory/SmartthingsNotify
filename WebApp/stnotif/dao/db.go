@@ -56,8 +56,18 @@ func MysqlTimeToUnix(ts string) int64 {
 }
 
 // SinceFormatToTime converts the "since" format to Time
+// The since may be an exact time in "mm/dd/yyyy HH:MM:SS" or a duration "6h" (h|m|s)
 func SinceFormatToTime(since string) (time.Time, error) {
-	return time.Parse(SinceDateFormat, since)
+	if len(since) > 0 {
+		d, err := time.ParseDuration(since)
+		if err == nil {
+			return time.Now().Add(-d), nil
+		} else {
+			return time.Parse(SinceDateFormat, since)
+		}
+	} else {
+		return time.Parse(SinceDateFormat, "1/1/1970 00:00:00")
+	}
 }
 
 // AddEvent inserts an event into the table

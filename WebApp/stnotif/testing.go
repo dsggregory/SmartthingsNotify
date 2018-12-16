@@ -16,6 +16,17 @@ type TestFixtures struct {
 	Config   *conf.Conf
 }
 
+func (tf *TestFixtures) AddFixture() {
+	e := dao.NotifRec{}
+	e.ID = 0
+	e.EvTime = time.Now().Unix() - 1 // so other tests can use time.Now()
+	e.Device = "fixture"
+	e.Event = "add"
+	e.Value = ""
+	e.Description = ""
+	tf.DbHandle.AddEvent(e)
+}
+
 func (tf *TestFixtures) loadFixtures(fpath string) {
 	if tf.DbHandle == nil {
 		panic("dbHandle is nil")
