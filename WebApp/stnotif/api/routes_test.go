@@ -59,5 +59,11 @@ func TestGetEvents(t *testing.T) {
 	err = json.Unmarshal(rr.Body.Bytes(), &recs)
 	assert.Nil(err)
 	assert.Equal(len(recs), 1, "only the one we just added")
+
+	rr = newEvReq(assert, "/events/device/fixture?since=1h")
+	err = json.Unmarshal(rr.Body.Bytes(), &recs)
+	assert.Nil(err)
+	assert.Equal(len(recs), 1, "only the one we just added")
+
 	f, _ = stnotif.NewFixtures() // reload for other tests
 }

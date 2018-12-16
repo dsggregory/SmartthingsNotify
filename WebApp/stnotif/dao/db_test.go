@@ -1,7 +1,9 @@
 package dao
 
 import (
+	"fmt"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -45,4 +47,9 @@ func TestSinceTimeConvert(t *testing.T) {
 		assert.Nil(err)
 		assert.Equal(tests[i].ti, t.Unix())
 	}
+
+	now := time.Now().Unix()
+	tm, err := SinceFormatToTime("1h")
+	assert.Nil(err)
+	assert.True((tm.Unix()+(60*60)+5) >= now, fmt.Sprintf("%d - %d  = %d > (60*60)", now, tm.Unix(), now-tm.Unix()))
 }

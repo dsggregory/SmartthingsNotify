@@ -35,8 +35,9 @@ func (s *server) addEvent(w http.ResponseWriter, r *http.Request) {
 // Get events since some time.
 // GET /events?since={mm/dd/yy+HH:MM:SS | duration}
 func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	t, err := dao.SinceFormatToTime(vars["since"])
+	v := r.URL.Query()
+	since := v.Get("since")
+	t, err := dao.SinceFormatToTime(since)
 	if err == nil {
 		var events []dao.NotifRec
 		events, err = s.db.GetEvents(t)
@@ -45,7 +46,7 @@ func (s *server) getEvents(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	if err != nil {
-		log.WithError(err).WithField("since", vars["since"]).Error("cannot get events")
+		log.WithError(err).WithField("since", since).Error("cannot get events")
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
@@ -64,23 +65,25 @@ func (s *server) getEventsState(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *server) getDeviceEvents(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
+	mv := mux.Vars(r)
+	v := r.URL.Query()
+	since := v.Get("since")
+	device := mv["device"]
 	var t time.Time
 	var err error
-	since := vars["since"] // optional
 	if len(since) == 0 {
 		since = "01/01/1970 00:00:00"
 	}
 	t, err = dao.SinceFormatToTime(since)
 	if err == nil {
 		var events []dao.NotifRec
-		events, err = s.db.GetDeviceEvents(vars["device"], &t)
+		events, err = s.db.GetDeviceEvents(device, &t)
 		if err == nil {
 			s.respondWithEvents(events, "views/events.html", w, r)
 		}
 	}
 	if err != nil {
-		log.WithError(err).WithField("since", vars["since"]).Error("cannot get events")
+		log.WithError(err).WithField("since", since).WithField("device", device).Error("cannot get events")
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }
@@ -91,14 +94,20 @@ func (s *server) initRoutes() {
 		o With named routes, other code may lookup the Path
 	   		url, err := r.Get(route_name).URL(param_name, param_value, ...)
 		o All params are required to match - this includes query (?.*) params that are defined for the route
+	    o Named queries (s.router.HandleFunc().Queries("p1", "{p1}")...)
+	      o are always required to match the route
+	      o in func, use:
+	          vars := mux.Vars(r)
+	          p1 := vars["p1"]
+	    o Optional query params must not be specified with .Queries()
+	      o in func, use:
+	          v := r.Url().Query()
+	          p1 := v.Get("p1")
+	      o still have to use mux.Vars(r) for vars in the path
 	*/
 	s.router.HandleFunc("/event", s.addEvent).
 		Methods("POST").
 		Name("addEvent")
-	s.router.HandleFunc("/events", s.getEvents).
-		Methods("GET").
-		Queries("since", "{since}").
-		Name("getEventsSince")
 	s.router.HandleFunc("/events", s.getEvents).
 		Methods("GET").
 		Name("getEvents")
@@ -109,7 +118,6 @@ func (s *server) initRoutes() {
 		Methods("GET")
 	s.router.HandleFunc("/events/device/{device}", s.getDeviceEvents).
 		Methods("GET").
-		Queries("since", "{since}").
 		Name("getDeviceEvents")
 
 	// Google Sheets faux routes for use by the SmartApp
