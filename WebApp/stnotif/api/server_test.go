@@ -7,6 +7,15 @@ import (
 	"testing"
 )
 
+func assertPanic(t *testing.T, msg string, f func()) {
+	defer func() {
+		if r := recover(); r == nil {
+			t.Errorf(msg)
+		}
+	}()
+	f()
+}
+
 func TestAllowedHosts(t *testing.T) {
 	assert := assert.New(t)
 	assert.NotNil(s)
@@ -18,8 +27,11 @@ func TestAllowedHosts(t *testing.T) {
 	req, err := http.NewRequest("GET", "/noop", nil)
 	assert.Nil(err)
 	rr := httptest.NewRecorder()
-	s.wrapRequest(s.router).ServeHTTP(rr, req)
-	assert.Equal(http.StatusForbidden, rr.Code)
+	rr.Code = 0
+	assertPanic(t, "did not silently refuce", func() {
+		s.wrapRequest(s.router).ServeHTTP(rr, req)
+	})
+	assert.Equal(0, rr.Code, "Response should not have written or set code")
 
 	s.config.AllowedHosts = append(s.config.AllowedHosts, "\\[::1\\]")  // ipv6
 	hosts := []string{"foo.com", "foo.com:port", "[::1]", "[::1]:port"} // remote addrs to test
