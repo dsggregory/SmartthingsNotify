@@ -28,10 +28,10 @@ func TestAllowedHosts(t *testing.T) {
 	assert.Nil(err)
 	rr := httptest.NewRecorder()
 	rr.Code = 0
-	assertPanic(t, "did not silently refuce", func() {
+	assertPanic(t, "did not silently refuse", func() {
 		s.wrapRequest(s.router).ServeHTTP(rr, req)
 	})
-	assert.Equal(0, rr.Code, "Response should not have written or set code")
+	assert.Equal(0, rr.Code, "response should not have written or set code")
 
 	s.config.AllowedHosts = append(s.config.AllowedHosts, "\\[::1\\]")  // ipv6
 	hosts := []string{"foo.com", "foo.com:port", "[::1]", "[::1]:port"} // remote addrs to test

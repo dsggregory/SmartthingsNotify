@@ -11,11 +11,13 @@ import (
 	"time"
 )
 
+// TestFixtures is used to load fixture test data into a test database
 type TestFixtures struct {
 	DbHandle *dao.DbHandle
 	Config   *conf.Conf
 }
 
+// AddFixture adds a record to the test database
 func (tf *TestFixtures) AddFixture() {
 	e := dao.NotifRec{}
 	e.ID = 0
@@ -63,7 +65,7 @@ func (tf *TestFixtures) loadFixtures(fpath string) {
 		if err != nil {
 			log.Println(err)
 		} else {
-			nRecs += 1
+			nRecs++
 		}
 	}
 }

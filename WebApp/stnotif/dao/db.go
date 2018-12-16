@@ -62,12 +62,10 @@ func SinceFormatToTime(since string) (time.Time, error) {
 		d, err := time.ParseDuration(since)
 		if err == nil {
 			return time.Now().Add(-d), nil
-		} else {
-			return time.Parse(SinceDateFormat, since)
 		}
-	} else {
-		return time.Parse(SinceDateFormat, "1/1/1970 00:00:00")
+		return time.Parse(SinceDateFormat, since)
 	}
+	return time.Parse(SinceDateFormat, "1/1/1970 00:00:00")
 }
 
 // AddEvent inserts an event into the table

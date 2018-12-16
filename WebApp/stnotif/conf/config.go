@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 )
 
+// DbConf is the Database config options
 type DbConf struct {
 	Driver   string `yaml:"driver"`
 	Database string `yaml:"database"`

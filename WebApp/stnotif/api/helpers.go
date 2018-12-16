@@ -24,9 +24,8 @@ func (s *server) GetDeviceEventsHref(device string) string {
 	href, err := s.router.Get("getDeviceEvents").URL("device", device, "since", "")
 	if err == nil {
 		return href.String()
-	} else {
-		return ""
 	}
+	return ""
 }
 
 // Respond with an array of events in JSON or by using the view specified by templatePath for HTML.

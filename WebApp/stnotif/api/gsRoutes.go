@@ -11,6 +11,7 @@ import (
 )
 
 const (
+	// GsVersion is the expected version of our faux Google Sheets endpoints
 	GsVersion = "Version 01.03.00"
 )
 
