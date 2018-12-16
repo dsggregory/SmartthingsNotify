@@ -2,7 +2,7 @@
 <head>
     <title>Device State</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/stylesheets/app.css?modified=20181214.2"/>
+    <link rel="stylesheet" href="/stylesheets/app.css?modified=20181215.13"/>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
 <div class="grid-container">
 {{range .Events }}
     <div class="card">
-        <div class="card-container" onclick="window.location.href='{{ .Device | getDeviceEventsHref }}'">
-            <h4><b>{{ .Device }}</b></h4>
-            <p>{{ .EventTime }}</p>
-            <p class="right">{{ .Value }}</p>
+        <div class="card-container {{.Event}} {{.Value}}" onclick="window.location.href='{{ .Device | getDeviceEventsHref }}'">
+                    <h4><b>{{ .Device }}</b></h4>
+                    <p>{{ .EventTime }}</p>
+                    <p class="right">{{ .Value }}</p>
         </div>
     </div>
 {{else}}
