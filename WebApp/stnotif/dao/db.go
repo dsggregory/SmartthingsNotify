@@ -102,7 +102,7 @@ func (d *DbHandle) notificationsFromQuery(rows *sql.Rows) ([]NotifRec, error) {
 
 // GetEvents returns an array of events since some time
 func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
-	tsince := since.Unix()
+	tsince := since.UTC().Unix()
 	log.WithField("since_t", tsince).WithField("since_tm", since).Debug()
 	rows, err := d.getStmt.Query(tsince)
 	defer rows.Close()
