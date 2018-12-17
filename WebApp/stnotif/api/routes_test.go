@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 )
 
 func newEvReq(assert *A.Assertions, url string) *httptest.ResponseRecorder {
@@ -52,18 +53,34 @@ func TestGetEvents(t *testing.T) {
 	var recs []dao.NotifRec
 	err := json.Unmarshal(rr.Body.Bytes(), &recs)
 	assert.Nil(err)
-	assert.Equal(len(recs), 1256, "we have this many recs since in fixtures")
+	assert.Equal(1256, len(recs), "we have this many recs since in fixtures")
 
-	f.AddFixture() // add one for the next test
+	f.AddFixture(nil) // add one for the next test
 	rr = newEvReq(assert, "/events?since=1h")
 	err = json.Unmarshal(rr.Body.Bytes(), &recs)
 	assert.Nil(err)
-	assert.Equal(len(recs), 1, "only the one we just added")
+	assert.Equal(1, len(recs), "only the one we just added")
 
 	rr = newEvReq(assert, "/events/device/fixture?since=1h")
 	err = json.Unmarshal(rr.Body.Bytes(), &recs)
 	assert.Nil(err)
-	assert.Equal(len(recs), 1, "only the one we just added")
+	assert.Equal(1, len(recs), "only the one we just added")
+
+	// add event from 2 hours ago
+	f.AddFixture(&dao.NotifRec{0, "fixture", time.Now().UTC().Unix() - (60 * 60 * 2), "ev", "eval", "fixture 2hr old event"})
+	f.AddFixture(&dao.NotifRec{0, "other", time.Now().UTC().Unix() - (60 * 60 * 2), "ev", "eval", "other 2hr old event"})
+	rr = newEvReq(assert, "/events/device/fixture?since=1h")
+	err = json.Unmarshal(rr.Body.Bytes(), &recs)
+	assert.Nil(err)
+	assert.Equal(1, len(recs), "not to include the 2hr old event")
+	rr = newEvReq(assert, "/events/device/fixture?since=2.1h")
+	err = json.Unmarshal(rr.Body.Bytes(), &recs)
+	assert.Nil(err)
+	assert.Equal(2, len(recs), "to include the 2hr old fixture event")
+	rr = newEvReq(assert, "/events?since=2.1h")
+	err = json.Unmarshal(rr.Body.Bytes(), &recs)
+	assert.Nil(err)
+	assert.Equal(3, len(recs), "to include the 2hr old events for all")
 
 	f, _ = stnotif.NewFixtures() // reload for other tests
 }

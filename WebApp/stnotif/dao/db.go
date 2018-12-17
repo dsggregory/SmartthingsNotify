@@ -44,6 +44,9 @@ type DbHandle struct {
 	getDeviceStmt *sql.Stmt
 }
 
+/* NOTE: use of time.UTC in the date conversion methods below are simply used to NOT APPLY
+any timezone info on the conversion.
+*/
 // UnixToMysqlTime converts time_t to YYYY-MM-DD hh:mm:ss
 func UnixToMysqlTime(ti int64) string {
 	return time.Unix(ti, 0).UTC().Format(goMysqlTimeFormat)
@@ -51,7 +54,7 @@ func UnixToMysqlTime(ti int64) string {
 
 // MysqlTimeToUnix converts YYYY-MM-DD hh:mm:ss to time_t
 func MysqlTimeToUnix(ts string) int64 {
-	t, _ := time.Parse(goMysqlTimeFormat, ts)
+	t, _ := time.ParseInLocation(goMysqlTimeFormat, ts, time.UTC)
 	return t.Unix()
 }
 
@@ -61,11 +64,11 @@ func SinceFormatToTime(since string) (time.Time, error) {
 	if len(since) > 0 {
 		d, err := time.ParseDuration(since)
 		if err == nil {
-			return time.Now().Add(-d), nil
+			return time.Now().UTC().Add(-d), nil
 		}
-		return time.Parse(SinceDateFormat, since)
+		return time.ParseInLocation(SinceDateFormat, since, time.UTC)
 	}
-	return time.Parse(SinceDateFormat, "1/1/1970 00:00:00")
+	return time.ParseInLocation(SinceDateFormat, "1/1/1970 00:00:00", time.UTC)
 }
 
 // AddEvent inserts an event into the table
@@ -115,13 +118,14 @@ func (d *DbHandle) GetDeviceEvents(device string, since *time.Time) ([]NotifRec,
 	if since == nil {
 		tsince = 0
 	} else {
-		tsince = since.Unix()
+		tsince = since.UTC().Unix()
 	}
 	log.WithFields(log.Fields{
 		"device":   device,
 		"since_t":  tsince,
 		"since_tm": since,
 	}).Debug()
+	//d.getDeviceStmt.
 	rows, err := d.getDeviceStmt.Query(tsince, device)
 	defer rows.Close()
 	if err == nil {
