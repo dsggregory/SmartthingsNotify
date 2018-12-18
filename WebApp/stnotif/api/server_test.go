@@ -1,10 +1,12 @@
 package api
 
 import (
+	"code.dsg.com/smartthings_notif/stnotif/dao"
 	"github.com/stretchr/testify/assert"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"time"
 )
 
 func assertPanic(t *testing.T, msg string, f func()) {
@@ -43,4 +45,25 @@ func TestAllowedHosts(t *testing.T) {
 		s.wrapRequest(s.router).ServeHTTP(rr, req)
 		assert.Equal(http.StatusNotFound, rr.Code, "should get 404 for "+hosts[i])
 	}
+}
+
+func TestDbHandle_AddEvent(t *testing.T) {
+	assert := assert.New(t)
+
+	now := time.Now().UTC()
+
+	f.Config.HubTzLocation = time.FixedZone("negOne", -100)
+	f.AddFixture(nil)
+	tm, err := dao.SinceFormatToTime("5m")
+	ev, err := f.DbHandle.GetEvents(tm)
+	assert.Nil(err)
+	assert.Equal(1, len(ev))
+	assert.WithinDuration(now, time.Unix(ev[0].EvTime, 0), 2*time.Second)
+
+	// change hub tz and still get the event we added
+	f.Config.HubTzLocation = time.UTC
+	ev, err = f.DbHandle.GetEvents(tm)
+	assert.Nil(err)
+	assert.Equal(1, len(ev))
+	assert.WithinDuration(now, time.Unix(ev[0].EvTime, 0), 2*time.Second)
 }

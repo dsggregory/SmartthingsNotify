@@ -23,7 +23,7 @@ const (
 type NotifRec struct {
 	ID          int
 	Device      string
-	EvTime      int64
+	EvTime      int64 // time_t of UTC
 	Event       string
 	Value       string
 	Description string
@@ -73,6 +73,8 @@ func SinceFormatToTime(since string) (time.Time, error) {
 
 // AddEvent inserts an event into the table
 func (d *DbHandle) AddEvent(n NotifRec) error {
+	// convert hub time to UTC
+	n.EvTime = time.Unix(n.EvTime, 0).In(time.UTC).Unix()
 	_, err := d.addStmt.Exec(n.Device, n.EvTime, n.Event, n.Value, n.Description)
 	return err
 }
@@ -94,6 +96,8 @@ func (d *DbHandle) notificationsFromQuery(rows *sql.Rows) ([]NotifRec, error) {
 			&n.Value,
 			&n.Description)
 		if err == nil {
+			// convert UTC time to hub time
+			n.EvTime = time.Unix(n.EvTime, 0).In(d.conf.HubTzLocation).Unix()
 			recs = append(recs, n)
 		}
 	}

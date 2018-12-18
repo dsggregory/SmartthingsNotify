@@ -2,6 +2,7 @@ serverPort: 8080
 debug: true
 allowedHosts: ['127.0.0.1', '\[::1\]', '192.168.1.17']
 zip: 29523
+hubTimezone: 'UTC'
 database:
   database: smartthings
   host: localhost

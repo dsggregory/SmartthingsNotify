@@ -2,11 +2,29 @@ package dao
 
 import (
 	"fmt"
+	"os"
 	"testing"
 	"time"
 
-	"github.com/stretchr/testify/assert"
+	A "github.com/stretchr/testify/assert"
 )
+
+func TestTimeConv(t *testing.T) {
+	assert := A.New(t)
+	os.Setenv("TZ", "UTC")
+
+	now := time.Now().UTC()
+
+	tm, err := SinceFormatToTime("2h")
+	assert.Nil(err)
+
+	tsince := tm.UTC().Unix()
+	assert.Equal(now.UTC().Unix()-(60*60*2), tsince)
+
+	d, err := time.ParseDuration("2h")
+	tm2 := now.Add(-d)
+	assert.Equal(tm.Unix(), tm2.Unix())
+}
 
 func TestMySqlTimeConvert(t *testing.T) {
 	type testTime struct {
@@ -18,7 +36,7 @@ func TestMySqlTimeConvert(t *testing.T) {
 		testTime{"2018-12-09 21:54:20", int64(1544392460)},
 	}
 
-	assert := assert.New(t)
+	assert := A.New(t)
 
 	for i := range tests {
 		ts := UnixToMysqlTime(tests[i].ti)
@@ -40,7 +58,8 @@ func TestSinceTimeConvert(t *testing.T) {
 		testTime{"12/09/2018 21:54:20", int64(1544392460)},
 	}
 
-	assert := assert.New(t)
+	os.Setenv("TZ", "UTC")
+	assert := A.New(t)
 
 	for i := range tests {
 		t, err := SinceFormatToTime(tests[i].ts)

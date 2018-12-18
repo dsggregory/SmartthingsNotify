@@ -15,16 +15,35 @@ First, install Docker on the destination host where you want the web service to 
 $ docker build -t stnotif .
 ```
 
+**ALLOW_HOSTS**
+
 Determine from where connections should be allowed to the web app. Certainly the SmartThings servers, 
 plus from where you may be browsing. Use these hosts as comma-separated values of the `ALLOW_HOSTS` environment variable 
 that you pass to docker when you run the service. 
-Setting `ALLOW_HOSTS` supports globbing (ex. "128.15.*") so you must escape square brackets `[]` in IPv6 addresses.
+`ALLOW_HOSTS` supports globbing (ex. "128.15.*") so you must escape square brackets `[]` in IPv6 addresses.
+
+**HUB_TIMEZONE**
+
+Specifies the timezone of the SmartThings hub. This is required in order to properly convert notification timestamps
+that do not specify the timezone. This setting must be in an IANA timezone format such as `America/New_York`.
+
+## Run the Container
 ```text
-$ docker run -d --name stnotif -p 8080:8080 -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' \
+$ docker run -d --name stnotif -p 8080:8080 \
+    -e ALLOW_HOSTS='172.17.0.1,127.0.0.1' \
+    -e HUB_TIMEZONE='America/New_York' \
     --mount 'source=stnotif-mysql,target=/var/lib/mysql' stnotif:latest
 ```
 
-You can browse to `http://{dockerhost}:8080/`.
+## Example Deployment Script
+```text
+set -x
+git pull
+docker build -t stnotif . || exit 1
+docker stop stnotif && \
+docker container prune --force && \
+docker run -d --name stnotif -p 8080:8080 --mount 'source=stnotif-mysql,target=/var/lib/mysql' -e ALLOW_HOSTS='127.0.0.1,98.25.156.124,54.83.15*' -e HUB_TIMEZONE='America/New_York' stnotif:latest
+```
 
 # Build
 The following information is useful when building for local testing.
