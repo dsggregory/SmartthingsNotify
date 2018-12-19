@@ -32,6 +32,9 @@ func main() {
 		log.SetLevel(log.DebugLevel)
 	}
 	pwd, _ := os.Getwd()
-	log.WithField("pwd", pwd).Debugf("Config => %+v", c)
+	log.WithFields(log.Fields{
+		"pwd": pwd,
+		"TZ":  os.Getenv("TZ"),
+	}).Debugf("Config => %+v", c)
 	api.StartServer(&c)
 }
