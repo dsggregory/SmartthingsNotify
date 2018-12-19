@@ -4,7 +4,7 @@ WORKDIR /usr/local/smartthings_notify
 
 RUN set -ex && \
     apk update && apk upgrade && \
-    apk add ca-certificates gcc git make libc-dev bash && \
+    apk add ca-certificates gcc git make libc-dev bash tzdata && \
     apk add mariadb mariadb-client
 
 COPY WebApp/ ./
