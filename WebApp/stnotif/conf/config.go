@@ -6,7 +6,6 @@ import (
 	log "github.com/sirupsen/logrus"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
-	"time"
 )
 
 // DbConf is the Database config options
@@ -22,13 +21,11 @@ type DbConf struct {
 
 // Conf an instantiated configuration
 type Conf struct {
-	ServerPort    int      `yaml:"serverPort"`
-	Debug         bool     `yaml:"debug"`
-	AllowedHosts  []string `yaml:"allowedHosts"`
-	globHosts     []glob.Glob
-	Database      DbConf
-	HubTimezone   string `yaml:"hubTimezone"`
-	HubTzLocation *time.Location
+	ServerPort   int      `yaml:"serverPort"`
+	Debug        bool     `yaml:"debug"`
+	AllowedHosts []string `yaml:"allowedHosts"`
+	globHosts    []glob.Glob
+	Database     DbConf
 }
 
 func (c *Conf) hostsCompile() {
@@ -99,16 +96,6 @@ func (c *Conf) GetConf(cfgPath string) *Conf {
 	err = yaml.Unmarshal(yamlFile, c)
 	if err != nil {
 		log.Fatalf("Unmarshal: %v", err)
-	}
-
-	if len(c.HubTimezone) > 0 {
-		l, err := time.LoadLocation(c.HubTimezone)
-		if err != nil {
-			log.WithField("HubTimezone", c.HubTimezone).Panic("unable to lookup timezone from config")
-		}
-		c.HubTzLocation = l
-	} else {
-		c.HubTzLocation = time.UTC
 	}
 
 	return c

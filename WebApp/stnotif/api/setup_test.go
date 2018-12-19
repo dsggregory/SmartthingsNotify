@@ -14,7 +14,6 @@ var (
 
 func setupTest() error {
 	var err error
-	os.Setenv("TZ", "UTC")
 	f, err = stnotif.NewFixtures()
 	//logrus.SetLevel(logrus.DebugLevel)
 	if err == nil {

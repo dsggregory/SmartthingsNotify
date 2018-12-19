@@ -67,8 +67,8 @@ func TestGetEvents(t *testing.T) {
 	assert.Equal(1, len(recs), "only the one we just added")
 
 	// add event from 2 hours ago
-	f.AddFixture(&dao.NotifRec{0, "fixture", time.Now().UTC().Unix() - (60 * 60 * 2), "ev", "eval", "fixture 2hr old event"})
-	f.AddFixture(&dao.NotifRec{0, "other", time.Now().UTC().Unix() - (60 * 60 * 2), "ev", "eval", "other 2hr old event"})
+	f.AddFixture(&dao.NotifRec{0, "fixture", time.Now().Unix() - (60 * 60 * 2), "ev", "eval", "fixture 2hr old event"})
+	f.AddFixture(&dao.NotifRec{0, "other", time.Now().Unix() - (60 * 60 * 2), "ev", "eval", "other 2hr old event"})
 	rr = newEvReq(assert, "/events/device/fixture?since=1h")
 	err = json.Unmarshal(rr.Body.Bytes(), &recs)
 	assert.Nil(err)

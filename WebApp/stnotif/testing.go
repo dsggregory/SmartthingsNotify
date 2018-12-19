@@ -22,7 +22,7 @@ func (tf *TestFixtures) AddFixture(event *dao.NotifRec) {
 	if event == nil {
 		e := dao.NotifRec{}
 		e.ID = 0
-		e.EvTime = time.Now().UTC().Unix() - 1 // so other tests can use time.Now()
+		e.EvTime = time.Now().Unix() - 1 // so other tests can use time.Now()
 		e.Device = "fixture"
 		e.Event = "add"
 		e.Value = ""

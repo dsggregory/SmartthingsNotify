@@ -51,7 +51,8 @@ func UnixToMysqlTime(ti int64) string {
 
 // MysqlTimeToUnix converts YYYY-MM-DD hh:mm:ss in localtime to a time_t
 func MysqlTimeToUnix(ts string) int64 {
-	t, _ := time.ParseInLocation(goMysqlTimeFormat, ts, time.UTC)
+	loc, _ := time.LoadLocation("Local")
+	t, _ := time.ParseInLocation(goMysqlTimeFormat, ts, loc)
 	return t.Unix()
 }
 
@@ -61,17 +62,19 @@ func SinceFormatToTime(since string) (time.Time, error) {
 	if len(since) > 0 {
 		d, err := time.ParseDuration(since)
 		if err == nil {
-			return time.Now().UTC().Add(-d), nil
+			return time.Now().Add(-d), nil
 		}
-		return time.ParseInLocation(SinceDateFormat, since, time.UTC)
+		loc, _ := time.LoadLocation("Local")
+		return time.ParseInLocation(SinceDateFormat, since, loc)
 	}
-	return time.ParseInLocation(SinceDateFormat, "1/1/1970 00:00:00", time.UTC)
+	return time.Parse(SinceDateFormat, "1/1/1970 00:00:00")
 }
 
 // AddEvent inserts an event into the table
 func (d *DbHandle) AddEvent(n NotifRec) error {
 	// convert hub time to UTC
-	n.EvTime = time.Unix(n.EvTime, 0).In(time.UTC).Unix()
+	n.EvTime = time.Unix(n.EvTime, 0).Unix()
+	log.WithField("rec", n).Debug("insert record")
 	_, err := d.addStmt.Exec(n.Device, n.EvTime, n.Event, n.Value, n.Description)
 	return err
 }
@@ -94,7 +97,7 @@ func (d *DbHandle) notificationsFromQuery(rows *sql.Rows) ([]NotifRec, error) {
 			&n.Description)
 		if err == nil {
 			// convert UTC time to hub time
-			n.EvTime = time.Unix(n.EvTime, 0).In(d.conf.HubTzLocation).Unix()
+			n.EvTime = time.Unix(n.EvTime, 0).Unix()
 			recs = append(recs, n)
 		}
 	}
@@ -103,7 +106,7 @@ func (d *DbHandle) notificationsFromQuery(rows *sql.Rows) ([]NotifRec, error) {
 
 // GetEvents returns an array of events since some time
 func (d *DbHandle) GetEvents(since time.Time) ([]NotifRec, error) {
-	tsince := since.UTC().Unix()
+	tsince := since.Unix()
 	log.WithField("since_t", tsince).WithField("since_tm", since).Debug()
 	rows, err := d.getStmt.Query(tsince)
 	defer rows.Close()
@@ -119,14 +122,13 @@ func (d *DbHandle) GetDeviceEvents(device string, since *time.Time) ([]NotifRec,
 	if since == nil {
 		tsince = 0
 	} else {
-		tsince = since.UTC().Unix()
+		tsince = since.Unix()
 	}
 	log.WithFields(log.Fields{
 		"device":   device,
 		"since_t":  tsince,
 		"since_tm": since,
 	}).Debug()
-	//d.getDeviceStmt.
 	rows, err := d.getDeviceStmt.Query(tsince, device)
 	defer rows.Close()
 	if err == nil {

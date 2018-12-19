@@ -2,7 +2,6 @@ package dao
 
 import (
 	"fmt"
-	"os"
 	"testing"
 	"time"
 
@@ -11,15 +10,14 @@ import (
 
 func TestTimeConv(t *testing.T) {
 	assert := A.New(t)
-	os.Setenv("TZ", "UTC")
 
-	now := time.Now().UTC()
+	now := time.Now()
 
 	tm, err := SinceFormatToTime("2h")
 	assert.Nil(err)
 
-	tsince := tm.UTC().Unix()
-	assert.Equal(now.UTC().Unix()-(60*60*2), tsince)
+	tsince := tm.Unix()
+	assert.Equal(now.Unix()-(60*60*2), tsince)
 
 	d, err := time.ParseDuration("2h")
 	tm2 := now.Add(-d)
@@ -58,7 +56,6 @@ func TestSinceTimeConvert(t *testing.T) {
 		testTime{"12/09/2018 21:54:20", int64(1544392460)},
 	}
 
-	os.Setenv("TZ", "UTC")
 	assert := A.New(t)
 
 	for i := range tests {
