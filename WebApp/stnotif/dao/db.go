@@ -29,9 +29,9 @@ type NotifRec struct {
 	Description string
 }
 
-// EventTime returns the string version of the NotifyRec.EvTime
+// EventTime returns the string version of the NotifyRec.EvTime in localtime
 func (n *NotifRec) EventTime() string {
-	return time.Unix(n.EvTime, 0).UTC().Format("Mon, 2 Jan 15:04:05")
+	return time.Unix(n.EvTime, 0).Format("Mon, 2 Jan 15:04:05")
 }
 
 // DbHandle is a handle to the database
@@ -44,19 +44,19 @@ type DbHandle struct {
 	getDeviceStmt *sql.Stmt
 }
 
-// UnixToMysqlTime converts time_t to YYYY-MM-DD hh:mm:ss
+// UnixToMysqlTime converts time_t to YYYY-MM-DD hh:mm:ss in localtime
 func UnixToMysqlTime(ti int64) string {
-	return time.Unix(ti, 0).UTC().Format(goMysqlTimeFormat)
+	return time.Unix(ti, 0).Format(goMysqlTimeFormat)
 }
 
-// MysqlTimeToUnix converts YYYY-MM-DD hh:mm:ss to time_t
+// MysqlTimeToUnix converts YYYY-MM-DD hh:mm:ss in localtime to a time_t
 func MysqlTimeToUnix(ts string) int64 {
 	t, _ := time.Parse(goMysqlTimeFormat, ts)
 	return t.Unix()
 }
 
 // SinceFormatToTime converts the "since" format to Time
-// The since may be an exact time in "mm/dd/yyyy HH:MM:SS" or a duration "6h" (h|m|s)
+// The since may be an exact time in "mm/dd/yyyy HH:MM:SS" localtime or a duration "6h" (h|m|s)
 func SinceFormatToTime(since string) (time.Time, error) {
 	if len(since) > 0 {
 		d, err := time.ParseDuration(since)
