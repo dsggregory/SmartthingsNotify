@@ -22,4 +22,8 @@ if [ -n "$ALLOW_HOSTS" ]; then
     sed -i "s|allowedHosts:.*|allowedHosts: [$ALLOW_HOSTS]|g" ./config.yaml
 fi
 
+if [ -n "$HUB_TIMEZONE" ]; then
+    sed -i "s|hubTimezone:.*|hubTimezone: '$HUB_TIMEZONE'|g" ./config.yaml
+fi
+
 ./smartthings_notif
