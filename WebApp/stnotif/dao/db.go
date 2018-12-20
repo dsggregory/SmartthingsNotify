@@ -139,7 +139,7 @@ func (d *DbHandle) GetDeviceEvents(device string, since *time.Time) ([]NotifRec,
 
 // GetLastByDevice returns the current state of all known devices
 func (d *DbHandle) GetLastByDevice() ([]NotifRec, error) {
-	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications group by device_name) order by device_name")
+	rows, err := d.conn.Query("select * from notifications where id in (select MAX(id) from notifications where event not in ('activity') group by device_name) order by device_name")
 	defer rows.Close()
 	if err == nil {
 		return d.notificationsFromQuery(rows)
